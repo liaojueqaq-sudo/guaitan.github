@@ -3,1178 +3,1760 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>夜航船 · 灵异怪谈 · 江北区专版</title>
+<title>怪谈事件簿</title>
 <style>
 :root{
-  --paper:#141110;--paper2:#1a1512;--card:#171310;
-  --ink:#c6b9aa;--ink2:#9b8f80;--ink3:#6f6459;
-  --red:#b8382b;--brown:#6b5344;--line:#332823;
-  --serif:"Noto Serif SC","Noto Serif CJK SC","Songti SC",STSong,"SimSun",serif;
-  --kai:"Kaiti SC","KaiTi",STKaiti,var(--serif);
-  --mono:"SF Mono",Menlo,Consolas,"Courier New",monospace;
+  --bg:#080606;--bg2:#0d0a0a;--card:#130e0e;
+  --ink:#c8bcb0;--ink2:#8f8177;--ink3:#5c5049;
+  --red:#b3352a;--red2:#e5432f;--red3:#ff5a45;
+  --line:#2a1a18;
+  --serif:"Noto Serif SC","Songti SC",STSong,serif;
+  --mono:"SF Mono",Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
-body{margin:0;background:#0d0b0a;color:var(--ink);font-family:var(--serif);font-size:15px;line-height:1.85}
-body::after{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:900;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
-  opacity:.035;mix-blend-mode:screen;
-}
-a{color:#bf5b4b;text-decoration:none}
-a:hover{color:var(--red);text-decoration:underline}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:15px;line-height:1.85}
+a{color:#c05040;text-decoration:none;cursor:pointer}
+a:hover{color:var(--red2)}
 .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
 
-/* 顶栏 */
-.topbar{background:linear-gradient(#1e1210,#341512);border-bottom:2px solid #4a1512;color:#c4b4a4}
+.topbar{background:linear-gradient(#1a0d0b,#2a0f0d);border-bottom:2px solid #4a1512;position:sticky;top:0;z-index:100}
 .tbi{display:flex;align-items:center;gap:14px;height:56px}
-.logo{font-size:22px;letter-spacing:.35em;color:#d8503f;font-weight:600;text-indent:.35em}
-.logo:hover{color:#fff;text-decoration:none}
-.lsub{font-family:var(--mono);font-size:10.5px;color:#85705f;letter-spacing:.08em;margin-top:6px}
-.tnav{margin-left:auto;font-size:13px;color:#a2948a;display:flex;gap:16px;letter-spacing:.08em}
-.tnav .off{color:#5f574e;cursor:default}
-.navbar{background:var(--paper2);border-bottom:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.logo{font-size:21px;letter-spacing:.3em;color:#d8503f;font-weight:600;text-indent:.3em}
+.lsub{font-family:var(--mono);font-size:10px;color:#7a6055}
+.tnav{margin-left:auto;font-size:13px;color:#a2948a;display:flex;gap:14px;align-items:center}
+.tnav .me{color:#d8503f;font-weight:600}
+.badge{background:var(--red2);color:#fff;font-size:10px;padding:0 5px;border-radius:8px;margin-left:3px;font-family:var(--mono)}
+.navbar{background:var(--bg2);border-bottom:1px solid var(--line);font-size:13px;color:var(--ink2)}
 .nbi{display:flex;align-items:center;gap:8px;height:38px}
 .nbi i{font-style:normal;color:var(--ink3);margin:0 2px}
 .nbi b{color:var(--ink);font-weight:600}
-.nstat{margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink3)}
-.main{padding:22px 16px 60px}
+.main{padding:22px 16px 80px}
 
-/* 公告 / 版规 */
-.notice{border:1px solid #4c2a20;background:#1d1410;padding:10px 14px;font-size:13px;color:#b39a80;display:flex;gap:10px;align-items:baseline;margin-bottom:18px}
-.notice b{color:var(--red);font-weight:600;letter-spacing:.1em;flex:none}
-.rules{border:1px solid var(--line);background:var(--card);padding:14px 18px;font-size:13px;color:var(--ink2);margin:16px 0 22px;line-height:2}
-.rules h4{margin:0 0 6px;font-size:13px;color:var(--ink);letter-spacing:.14em;font-weight:600}
-.rules span{color:var(--ink3);margin-right:8px;font-family:var(--mono);font-size:11px}
+.login-page{min-height:100vh;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#140a0a 0%,#050303 100%)}
+.login-box{width:340px;text-align:center;padding:30px}
+.login-box h1{font-size:26px;letter-spacing:.4em;color:#d8503f;font-weight:600;margin:0 0 8px;text-indent:.4em}
+.login-box .sub{font-family:var(--mono);font-size:10.5px;color:#6b5a50;margin-bottom:36px}
+.login-box input{width:100%;background:#0d0a0a;border:1px solid #33211e;color:#d8c8b8;padding:12px 14px;font-family:var(--serif);font-size:15px;text-align:center;letter-spacing:.2em;outline:none;margin-bottom:14px}
+.login-box input:focus{border-color:var(--red)}
+.login-box button{width:100%;background:#2a1210;border:1px solid #4a1a16;color:#d8c8b8;padding:12px;font-family:var(--serif);font-size:15px;letter-spacing:.3em;cursor:pointer;text-indent:.3em;transition:.3s}
+.login-box button:hover{background:var(--red);color:#fff;border-color:var(--red2)}
+.login-box .tip{font-size:11.5px;color:#5c4a44;margin-top:22px;font-family:var(--mono);line-height:1.9}
 
-/* 列表 */
-.sec-title{display:flex;align-items:baseline;gap:12px;margin:0 0 12px;font-size:19px;font-weight:600;letter-spacing:.08em}
-.sec-title small{font-size:12px;color:var(--ink3);font-weight:400;font-family:var(--mono)}
+.notice{border:1px solid #4c2a20;background:#1a100e;padding:10px 14px;font-size:13px;color:#b39a80;margin-bottom:18px;display:flex;gap:10px;align-items:baseline}
+.notice b{color:var(--red2);font-weight:600;flex:none;letter-spacing:.1em}
+.guide-bar{border:1px solid #4a3a1a;background:#1a1508;padding:10px 14px;font-size:12px;color:#a89a70;margin-bottom:14px;display:flex;gap:10px;align-items:baseline;font-family:var(--mono);line-height:1.9}
+.guide-bar b{color:#d8a040;flex:none}
+.guide-bar .close{margin-left:auto;cursor:pointer;color:var(--ink3);flex:none}
+.guide-bar .close:hover{color:var(--red)}
+.search-bar{display:flex;gap:6px;margin-bottom:16px}
+.search-bar input{flex:1;background:#080606;border:1px solid var(--line);color:var(--ink);padding:8px 12px;font-family:var(--serif);font-size:13px;outline:none}
+.search-bar input:focus{border-color:var(--red)}
+.search-bar button{background:var(--card);border:1px solid var(--line);color:var(--ink2);padding:8px 16px;cursor:pointer;font-family:var(--serif);font-size:13px}
+.search-bar button:hover{background:var(--red);color:#fff}
+.rules{border:1px solid var(--line);background:var(--card);padding:14px 18px;font-size:12.5px;color:var(--ink2);margin:16px 0;line-height:2}
+.rules h4{margin:0 0 6px;font-size:12.5px;color:var(--ink);letter-spacing:.14em;font-weight:600}
+.rules span{color:var(--ink3);margin-right:6px;font-family:var(--mono);font-size:11px}
+
+.sec-title{display:flex;align-items:baseline;gap:12px;margin:22px 0 12px;font-size:18px;font-weight:600;letter-spacing:.06em}
+.sec-title small{font-size:11.5px;color:var(--ink3);font-weight:400;font-family:var(--mono)}
 .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:14px}
-.tbl th{background:var(--paper2);border-bottom:1px solid var(--line);padding:9px 12px;font-weight:400;font-size:12px;color:var(--ink2);text-align:left;letter-spacing:.08em}
-.tbl td{border-bottom:1px dashed #2a211c;padding:13px 12px;vertical-align:middle}
+.tbl th{background:var(--bg2);border-bottom:1px solid var(--line);padding:9px 12px;font-weight:400;font-size:11.5px;color:var(--ink2);text-align:left;letter-spacing:.06em}
+.tbl td{border-bottom:1px dashed #241612;padding:12px;vertical-align:middle}
 .tbl tr:last-child td{border-bottom:none}
-.tbl tbody tr:hover td{background:#1e1813}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#4a3f36}
-.dot.hot{background:var(--red)}
+.tbl tbody tr:hover td{background:#1a1210;cursor:pointer}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#3a2e28}
+.dot.hot{background:var(--red2);box-shadow:0 0 6px var(--red)}
 .tt{font-size:15px;color:var(--ink);letter-spacing:.02em}
-.tg{font-size:12px;color:var(--ink3);margin-top:4px;line-height:1.6}
-.col-a{width:106px;color:var(--ink2);font-size:13px}
-.col-n{width:96px;font-family:var(--mono);font-size:11.5px;color:var(--ink3);white-space:nowrap}
-.col-l{width:150px;font-size:12px;color:var(--ink3);line-height:1.6}
-.col-l b{font-weight:400;color:var(--ink2)}
-.col-i{width:34px;text-align:center}
+.tt .new{color:var(--red3);font-size:11px;margin-left:6px;font-family:var(--mono)}
+.tg{font-size:12px;color:var(--ink3);margin-top:3px;line-height:1.5}
+.col-a{width:100px;color:var(--ink2);font-size:12.5px}
+.col-n{width:96px;font-family:var(--mono);font-size:11px;color:var(--ink3);white-space:nowrap}
+.col-l{width:140px;font-size:11.5px;color:var(--ink3);line-height:1.5}
+.col-i{width:32px;text-align:center}
+.tag-end{font-family:var(--mono);font-size:10px;color:#4a8a5a;border:1px solid #2a4a34;padding:0 4px}
+.tag-run{font-family:var(--mono);font-size:10px;color:#d8a040;border:1px solid #5a4420;padding:0 4px}
 .online{margin-top:20px;border:1px solid var(--line);background:var(--card);padding:11px 14px;font-size:12px;color:var(--ink3);font-family:var(--mono);line-height:1.9}
-.online b{font-weight:400;color:var(--ink2);font-family:var(--serif);letter-spacing:.05em}
+.online b{font-weight:400;color:var(--ink2);font-family:var(--serif)}
 
-/* 帖子 */
-.crumb{font-size:12.5px;color:var(--ink3);margin-bottom:14px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-.crumb a{color:var(--ink3)}
-.backbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-.backlink{font-size:12.5px;color:var(--ink2);border:1px solid var(--line);background:var(--card);padding:4px 12px;letter-spacing:.06em}
-.backlink:hover{color:var(--red);border-color:#6b2a22;text-decoration:none}
-h1.th-title{font-size:21px;margin:0 0 4px;letter-spacing:.04em;font-weight:600;line-height:1.5}
-.th-sub{font-size:12px;color:var(--ink3);font-family:var(--mono);margin-bottom:18px}
-.post{display:grid;grid-template-columns:172px 1fr;border:1px solid var(--line);background:var(--card);margin-bottom:14px}
-.post.me{border-color:#6b2a22;box-shadow:inset 3px 0 0 var(--red)}
-.pu{background:#14100e;border-right:1px solid var(--line);padding:16px 14px;text-align:center;font-size:12px;color:var(--ink3)}
-.av{width:66px;height:66px;margin:0 auto 10px;position:relative;overflow:hidden;border:1px solid #3a2f28;background:#28323a}
-.av::before{content:"";position:absolute;left:50%;top:60%;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50% 50% 46% 46%;background:rgba(255,255,255,.20);filter:blur(2px)}
-.av::after{content:"";position:absolute;left:50%;top:32%;width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:rgba(255,255,255,.28);filter:blur(2px)}
-.av.g2{background:#2c2c26}.av.g3{background:#232a22}.av.g4{background:#2a2222}.av.g5{background:#242428}
-.un{font-size:14px;color:var(--ink);letter-spacing:.06em;font-weight:600}
-.rk{font-size:11px;color:var(--ink3);margin:2px 0 10px}
-.ps{line-height:1.9;font-size:11px;font-family:var(--mono)}
-.ps span{display:block}
-.ps .last{color:#7a6b58}
-.pc{padding:14px 22px 20px;min-width:0}
-.phd{display:flex;font-size:11.5px;color:var(--ink3);font-family:var(--mono);border-bottom:1px solid #2a211c;padding-bottom:9px;margin-bottom:14px}
+.crumb{font-size:12px;color:var(--ink3);margin-bottom:12px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.backbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px}
+.backlink{font-size:12px;color:var(--ink2);border:1px solid var(--line);background:var(--card);padding:5px 12px;letter-spacing:.04em}
+.backlink:hover{color:var(--red2);border-color:#6b2a22;text-decoration:none}
+h1.th-title{font-size:20px;margin:0 0 4px;letter-spacing:.03em;font-weight:600;line-height:1.5}
+.th-sub{font-size:11.5px;color:var(--ink3);font-family:var(--mono);margin-bottom:16px}
+.post{display:grid;grid-template-columns:160px 1fr;border:1px solid var(--line);background:var(--card);margin-bottom:12px}
+.post.me{border-color:#6b2a22;box-shadow:inset 3px 0 0 var(--red2)}
+.pu{background:#100a09;border-right:1px solid var(--line);padding:14px 12px;text-align:center;font-size:11.5px;color:var(--ink3)}
+.av{width:60px;height:60px;margin:0 auto 8px;border-radius:50%;border:1px solid #3a2f28;background:radial-gradient(circle at 40% 35%,#3a4a5a,#1a2028)}
+.av.g1{background:radial-gradient(circle at 40% 35%,#5a4a3a,#2a1a10)}
+.av.g2{background:radial-gradient(circle at 40% 35%,#3a5a4a,#102a18)}
+.av.g3{background:radial-gradient(circle at 40% 35%,#5a3a4a,#2a1020)}
+.av.g4{background:radial-gradient(circle at 40% 35%,#4a4a5a,#181820)}
+.av.g5{background:radial-gradient(circle at 40% 35%,#6a4a2a,#2a1a0a)}
+.un{font-size:13.5px;color:var(--ink);letter-spacing:.04em;font-weight:600}
+.rk{font-size:10.5px;color:var(--ink3);margin:2px 0 8px}
+.ps{line-height:1.8;font-size:10.5px;font-family:var(--mono)}
+.pc{padding:14px 20px 18px;min-width:0}
+.phd{display:flex;font-size:11px;color:var(--ink3);font-family:var(--mono);border-bottom:1px solid #241612;padding-bottom:8px;margin-bottom:12px}
 .phd .fl{margin-left:auto;color:#7d7060}
-.pb{font-size:15.5px;line-height:2.05;color:#c3b6a7}
-.pb p{margin:0 0 15px}
+.pb{font-size:15px;line-height:2;color:#c3b6a7}
+.pb p{margin:0 0 13px}
 .pb p:last-child{margin-bottom:0}
-.pb .dim{color:var(--ink3);font-size:13px}
-.sig{margin-top:18px;padding-top:10px;border-top:1px dashed #2a211c;font-family:var(--kai);font-size:13px;color:#857a6c}
-.ghost{color:#171310;user-select:text}
-.ghost::selection{background:var(--red);color:#fff}
-.hl{color:var(--red)}
-.fig{margin:18px 0 6px;max-width:400px}
-.fig-in{border:1px solid #3a2d26;background:#111;line-height:0}
-.fig-in svg{width:100%;height:auto;display:block;filter:contrast(1.08) brightness(.95)}
-.fig figcaption{font-size:11px;color:var(--ink3);font-family:var(--mono);margin-top:6px}
-.tailnav{display:flex;justify-content:center;gap:12px;margin:30px 0 10px}
-.tailnav a{border:1px solid var(--line);background:var(--card);padding:8px 22px;font-size:13px;color:var(--ink2);letter-spacing:.1em}
-.tailnav a:hover{color:var(--red);border-color:#6b2a22;text-decoration:none}
+.pb .dim{color:var(--ink3);font-size:12.5px}
+.sig{margin-top:16px;padding-top:9px;border-top:1px dashed #241612;font-size:12px;color:#7a6f62;font-style:italic}
+.hid{color:var(--bg);cursor:help;transition:color .5s,text-shadow .5s}
+.hid:hover{color:var(--red3);text-shadow:0 0 8px var(--red)}
 
-.footer{border-top:1px solid var(--line);margin-top:40px;padding:18px 0 40px;font-size:11.5px;color:#7a7367;font-family:var(--mono);line-height:2}
+.reply-box{margin-top:18px;background:var(--card);padding:14px;border:1px solid var(--line)}
+.reply-box .hd{color:var(--ink3);font-size:11.5px;margin-bottom:8px;font-family:var(--mono)}
+.reply-box textarea{width:100%;height:64px;background:#080606;border:1px solid #2a1a18;color:var(--ink);padding:9px;resize:none;font-family:var(--serif);font-size:14px;outline:none}
+.reply-box textarea:focus{border-color:var(--red)}
+.reply-box button{margin-top:9px;background:var(--red);color:#fff;border:none;padding:7px 20px;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.1em}
+.reply-box button:hover{background:var(--red2)}
+.reply-box .warn{color:var(--red3);font-size:12px;margin-top:8px;font-family:var(--mono)}
 
-/* ================= 线索板 ================= */
-.board-page{background:#1b1815;margin:0 -16px;padding:22px 16px 70px;color:#c8bda8;min-height:100vh}
-.bp-head{max-width:1180px;margin:0 auto 16px;display:flex;align-items:center;gap:14px}
-.bp-head .bk{font-family:var(--mono);font-size:11px;color:#8a7d68;letter-spacing:.1em;border:1px solid #4a4034;padding:4px 12px}
-.bp-head .bk:hover{color:#d9cbb0;border-color:#7d6c56;text-decoration:none}
+.pm-page{display:grid;grid-template-columns:220px 1fr;border:1px solid var(--line);background:var(--card);min-height:520px}
+.pm-list{border-right:1px solid var(--line);background:#0f0908}
+.pm-list-hd{padding:10px 12px;font-size:11px;color:var(--ink3);letter-spacing:.14em;font-family:var(--mono);border-bottom:1px solid var(--line)}
+.pm-item{padding:11px 12px;border-bottom:1px solid #1a1210;cursor:pointer;font-size:13px;transition:.2s}
+.pm-item:hover{background:#1a1210}
+.pm-item.active{background:#2a1210;border-left:3px solid var(--red2)}
+.pm-item .nm{color:var(--ink);font-size:13.5px;display:flex;align-items:center;gap:6px}
+.pm-item.unread .nm{color:var(--red2);font-weight:600}
+.pm-item .prev{font-size:11px;color:var(--ink3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pm-unread-dot{width:7px;height:7px;border-radius:50%;background:var(--red2);margin-left:auto;flex:none}
+.pm-conv{padding:0;display:flex;flex-direction:column;min-width:0}
+.pm-conv-hd{padding:12px 16px;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.pm-back-mobile{display:none;background:none;border:1px solid var(--line);color:var(--ink2);padding:3px 8px;font-size:12px;cursor:pointer;margin-right:6px}
+.pm-body{flex:1;padding:16px;overflow-y:auto;max-height:440px}
+.pm-msg{display:flex;gap:8px;align-items:flex-start;margin-bottom:12px}
+.pm-msg .who{flex:none;width:54px;text-align:right;padding-top:2px;font-size:11px;color:var(--ink3);line-height:1.4;word-break:break-all}
+.pm-msg .bub{background:#1a1210;border:1px solid #2a1a18;padding:7px 12px;font-size:13.5px;color:#c3b6a7;max-width:78%;border-radius:3px;white-space:pre-wrap;word-break:break-word}
+.pm-msg.mine{flex-direction:row-reverse}
+.pm-msg.mine .who{text-align:left;color:var(--red2)}
+.pm-msg.mine .bub{background:#2a1210;border-color:#4a1a16}
+.pm-send{border-top:1px solid var(--line);padding:10px;display:flex;gap:8px}
+.pm-send input{flex:1;background:#080606;border:1px solid #2a1a18;color:var(--ink);padding:8px 10px;font-family:var(--serif);font-size:13px;outline:none}
+.pm-send button{background:var(--red);color:#fff;border:none;padding:0 16px;cursor:pointer;font-family:var(--serif)}
+.pm-empty{padding:40px;text-align:center;color:var(--ink3);font-size:12px;line-height:2}
+
+.board-page{background:var(--bg2);margin:0 -16px;padding:20px 16px 70px;min-height:80vh}
+.bp-head{max-width:1200px;margin:0 auto 12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.bp-head .bk{font-family:var(--mono);font-size:11px;color:#8a7d68;border:1px solid #4a4034;padding:4px 12px}
+.bp-head .bk:hover{color:#d9cbb0;border-color:#7d6c56}
 .bp-head .ti{font-size:17px;color:#d7cab2;letter-spacing:.05em}
-.bp-head .sub{font-family:var(--mono);font-size:10.5px;color:#6b6050;letter-spacing:.08em;margin-left:auto}
-.bsub{max-width:1180px;margin:0 auto 14px;font-size:12px;color:#7d7160;line-height:1.9;letter-spacing:.02em}
+.bp-head .sub{font-family:var(--mono);font-size:10.5px;color:#6b6050;margin-left:auto}
+.bsub{max-width:1200px;margin:0 auto 12px;font-size:12px;color:#7d7160;line-height:1.9}
 .bsub b{color:#b8a98e;font-weight:400}
-
-.board-scroll{overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding-bottom:8px}
-.board{
-  position:relative;width:100%;min-width:880px;max-width:1180px;margin:0 auto;
-  aspect-ratio:16/10;background:#3e352c;border:15px solid #6b5745;border-radius:2px;
-  box-shadow:inset 0 0 140px rgba(0,0,0,.8),0 30px 60px -30px #000;
-  overflow:hidden;user-select:none;-webkit-user-drag:none;touch-action:auto;
-}
-.board-hint{display:none;max-width:1180px;margin:0 auto 10px;font-family:var(--mono);font-size:10.5px;color:#7d6b57;letter-spacing:.06em}
-.board::before{
-  content:"";position:absolute;inset:0;pointer-events:none;z-index:1;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23c)' opacity='0.6'/%3E%3C/svg%3E");
-  opacity:.12;mix-blend-mode:overlay;
-}
-/* 底图：地图 */
-.mapbg{position:absolute;inset:0;z-index:0;opacity:.72}
-.mapbg svg{width:100%;height:100%;display:block}
-#boardSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:6}
+.board-wrap{max-width:1200px;margin:0 auto;position:relative}
+.board{position:relative;width:100%;height:640px;background:#2a2420;border:10px solid #5a4a3a;box-shadow:inset 0 0 120px rgba(0,0,0,.8),0 20px 50px -20px #000;overflow:hidden;user-select:none;background-image:radial-gradient(circle at 50% 50%,#33291f 0%,#221a14 100%)}
+.board::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");opacity:.08;mix-blend-mode:overlay}
+#boardSvg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
 #boardSvg path{fill:none;stroke:#c04a3c;stroke-width:2.2;stroke-linecap:round}
-#boardSvg path.dash{stroke-width:1.5;stroke-dasharray:7 6;stroke:#d9cbb0;opacity:.35}
-#boardSvg path.ok{stroke:#c94433;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
-#boardSvg path.bad{stroke:#6d6154;opacity:.5}
-
-/* 卡片 */
-.card{position:absolute;z-index:3;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.card .cbox{position:absolute;inset:0;box-shadow:2px 4px 14px rgba(0,0,0,.55);overflow:hidden}
-.card.linked .cbox{outline:1px solid rgba(200,70,55,.75)}
-.card.picked{z-index:9}
-.card.picked .cbox{outline:2px solid #d8503f;outline-offset:2px}
-.card.picked .pin{transform:scale(1.6)}
-.card.picked{animation:pickpulse 1.5s infinite}
-@keyframes pickpulse{0%,100%{filter:none}50%{filter:drop-shadow(0 0 7px rgba(216,80,63,.5))}}
-.card.ok-flash .cbox{animation:flash .7s}
-@keyframes flash{0%,100%{box-shadow:2px 4px 14px rgba(0,0,0,.55)}40%{box-shadow:0 0 0 3px rgba(200,70,55,.55),2px 4px 14px rgba(0,0,0,.55)}}
-.pin{
-  position:absolute;left:-8px;top:-8px;width:17px;height:17px;border-radius:50%;z-index:8;
-  background:radial-gradient(circle at 34% 30%,#ee6a56,#8e2117 70%);
-  box-shadow:0 2px 5px rgba(0,0,0,.7),inset 0 -1px 2px rgba(0,0,0,.4);
-  cursor:crosshair;transition:transform .15s;
-  touch-action:none;-webkit-tap-highlight-color:transparent;
-}
-.pin::after{content:"";position:absolute;inset:-16px;border-radius:50%}
-.pin:hover{transform:scale(1.25)}
-.card:hover .pin{transform:scale(1.15)}
-
-/* 卡片内容 */
-.papercard{background:#efe8d6;color:#3b342a;padding:7% 8%;font-size:8px;line-height:1.75}
-.papercard .ct{font-family:var(--mono);font-size:7.5px;color:#8a2119;letter-spacing:.06em;border-bottom:1px solid #cfc2a8;padding-bottom:3px;margin-bottom:4px}
-.papercard .cn{font-size:10px;font-weight:700;letter-spacing:.03em;margin-bottom:4px;line-height:1.4}
-.papercard .cd{font-family:var(--mono);font-size:6.5px;color:#8b816c;line-height:1.9}
-.papercard .cq{font-family:var(--kai);font-size:8px;color:#4a4238;line-height:1.8;margin-top:3px}
-
-.stub{background:#e8e3d2;color:#3b342a;padding:7% 7%;transform:rotate(-1.6deg)}
-.stub .hole{position:absolute;left:0;top:0;bottom:0;width:7%;background:radial-gradient(circle at 50% 6px,#3e352c 3px,transparent 3.5px) 0 0/100% 12px repeat-y;opacity:.5}
-.stub .sc{font-family:var(--mono);font-size:7px;color:#243d6b;line-height:2;padding-left:9%}
-.stub .sc b{font-size:9px;letter-spacing:.05em}
-
-.photocard{background:#f6f1e2;padding:4% 4% 12%;transform:rotate(1.2deg)}
-.photocard .ph{width:100%;height:100%;background:#1b1b1d;position:relative;overflow:hidden}
-.photocard .cap{position:absolute;left:0;right:0;bottom:1.5%;text-align:center;font-family:var(--mono);font-size:6px;color:#8b816c}
-
-.dutycard{background:#ece4d0;color:#423a2d;padding:5% 5%;transform:rotate(.8deg);font-family:var(--mono);font-size:6px}
-.dutycard .dh{border-bottom:1px solid #b7ab90;padding-bottom:2px;margin-bottom:3px;letter-spacing:.04em;font-size:6.5px}
-.dutycard .dr{display:flex;justify-content:space-between;border-bottom:1px dotted #cfc3aa;padding:1.2px 0}
-.dutycard .hl2{background:#f0d98a;color:#6b4c00}
-
-.billcard{background:#f9f4e6;color:#3b342a;padding:6%;font-family:var(--mono);font-size:6.5px;line-height:2;transform:rotate(-1deg)}
-.billcard .bh{font-size:8px;color:#8a2119;border-bottom:1px solid #cfc2a8;padding-bottom:3px;margin-bottom:4px;letter-spacing:.04em}
-.billcard .big{font-size:12px;color:#1f1a15}
-
-.guide{position:absolute;z-index:2;font-family:var(--kai);font-size:11px;color:#8e8069;line-height:1.9;transform:rotate(-2deg)}
-.guide2{position:absolute;z-index:2;background:#e8d87c;color:#4a3a1a;padding:2% 1.6%;width:13%;font-family:var(--kai);font-size:9px;line-height:1.8;box-shadow:2px 3px 10px rgba(0,0,0,.5);transform:rotate(-4deg)}
-
-/* 笔记区 */
-.notes{max-width:1180px;margin:26px auto 0}
-.notes h3{font-size:12px;color:#7d7160;letter-spacing:.24em;font-family:var(--mono);font-weight:400;margin:0 0 12px;display:flex;align-items:center;gap:10px}
-.notes h3::after{content:"";flex:1;height:1px;background:#332c24}
-.nlist{display:grid;gap:8px}
-.nitem{
-  display:flex;gap:14px;font-size:13px;color:#b3a58c;line-height:1.85;
-  border-left:2px solid #5a4c3c;padding:6px 0 6px 14px;opacity:0;animation:nin .6s forwards;
-}
-@keyframes nin{to{opacity:1}}
-.nitem i{font-style:normal;font-family:var(--mono);font-size:10px;color:#8a2119;flex:none;padding-top:3px;letter-spacing:.05em}
-.nitem.wrong{border-left-color:#6d6154;color:#7d7160;font-size:12px}
-.board-ctl{max-width:1180px;margin:24px auto 0;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.pbar{flex:1;min-width:180px;height:2px;background:#332c24;position:relative}
-.pbar i{position:absolute;left:0;top:0;bottom:0;background:#b23f31;width:0;transition:width .6s}
-.pnum{font-family:var(--mono);font-size:11px;color:#7d7160;letter-spacing:.1em}
-.solvebtn{
-  background:none;border:1px solid #6b5745;color:#c8bda8;font-family:var(--serif);font-size:13px;
-  letter-spacing:.22em;padding:9px 26px;cursor:pointer;opacity:.3;pointer-events:none;transition:.4s;
-}
-.solvebtn.on{opacity:1;pointer-events:auto;border-color:#b8382b;color:#e2b8ae}
-.solvebtn.on:hover{background:#b8382b;color:#1b1815}
-.hint{width:100%;font-size:11px;color:#6b6050;font-family:var(--mono);letter-spacing:.06em;margin-top:4px}
-.hintbtn{
-  background:none;border:1px dashed #5b4b3b;color:#8d8170;font-family:var(--mono);
-  font-size:10.5px;letter-spacing:.14em;padding:8px 14px;cursor:pointer;transition:.3s;
-}
-.hintbtn:hover{border-color:#b8382b;color:#d8c8b0}
-.hintmsg{width:100%;font-size:12px;color:#b9ac95;font-family:var(--mono);letter-spacing:.04em;line-height:1.8;margin-top:2px}
+#boardSvg path.ok{stroke:#c94433;filter:drop-shadow(0 1px 3px rgba(0,0,0,.7))}
+#boardSvg path.bad{stroke:#6d6154;opacity:.5;stroke-dasharray:4 4}
+#boardSvg path.temp{stroke:#d9cbb0;opacity:.6;stroke-dasharray:6 5}
+.clue-card{position:absolute;z-index:3;cursor:grab;background:#efe8d6;color:#3b342a;border-radius:1px;box-shadow:3px 4px 14px rgba(0,0,0,.55);padding:9px 11px;font-size:11px;line-height:1.6;min-width:120px;max-width:180px;transition:box-shadow .2s}
+.clue-card:active{cursor:grabbing}
+.clue-card.dragging{z-index:20;box-shadow:0 10px 30px rgba(0,0,0,.8);transform:rotate(1deg)}
+.clue-card.linked{outline:1px solid rgba(200,70,55,.7)}
+.clue-card .ct{font-family:var(--mono);font-size:8.5px;color:#8a2119;letter-spacing:.05em;border-bottom:1px solid #cfc2a8;padding-bottom:2px;margin-bottom:3px}
+.clue-card .cn{font-size:12px;font-weight:700;margin-bottom:3px;line-height:1.4}
+.clue-card .cd{font-family:var(--mono);font-size:8px;color:#8b816c;line-height:1.7}
+.clue-card .pin{position:absolute;left:-7px;top:-7px;width:15px;height:15px;border-radius:50%;background:radial-gradient(circle at 34% 30%,#ee6a56,#8e2117 70%);box-shadow:0 2px 5px rgba(0,0,0,.6);cursor:crosshair;z-index:5}
+.clue-card .pin::after{content:"";position:absolute;inset:-12px;border-radius:50%}
+.board-empty{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#5a4a3a;font-size:13px;font-family:var(--mono);text-align:center;pointer-events:none;padding:20px;line-height:2}
+.notes{max-width:1200px;margin:22px auto 0}
+.notes h3{font-size:11.5px;color:#7d7160;letter-spacing:.2em;font-family:var(--mono);font-weight:400;margin:0 0 10px;display:flex;align-items:center;gap:10px}
+.notes h3::after{content:"";flex:1;height:1px;background:#2a231c}
+.nlist{display:grid;gap:6px;max-height:200px;overflow-y:auto}
+.nitem{display:flex;gap:10px;font-size:12.5px;color:#b3a58c;line-height:1.8;border-left:2px solid #5a4c3c;padding:4px 0 4px 12px}
+.nitem i{font-style:normal;font-family:var(--mono);font-size:10px;color:#8a2119;flex:none;padding-top:3px}
+.nitem.wrong{border-left-color:#6d6154;color:#7d7160;font-size:11.5px}
+.board-ctl{max-width:1200px;margin:18px auto 0;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.pbar{flex:1;min-width:160px;height:2px;background:#2a231c;position:relative}
+.pbar i{position:absolute;left:0;top:0;bottom:0;background:var(--red2);width:0;transition:width .5s}
+.pnum{font-family:var(--mono);font-size:11px;color:#7d7160}
+.hintbtn,.resetbtn{background:none;border:1px dashed #5b4b3b;color:#8d8170;font-family:var(--mono);font-size:10px;letter-spacing:.12em;padding:7px 13px;cursor:pointer}
+.hintbtn:hover,.resetbtn:hover{border-color:var(--red);color:#d8c8b0}
+.hintmsg{width:100%;font-size:12px;color:#b9ac95;font-family:var(--mono);line-height:1.8;margin-top:2px}
 .hintmsg b{color:#d8695b;font-weight:400}
-.resetbtn{
-  background:none;border:1px solid #4a3b32;color:#7d6a5e;font-family:var(--mono);
-  font-size:10.5px;letter-spacing:.14em;padding:8px 14px;cursor:pointer;transition:.3s;
-}
-.resetbtn:hover{border-color:#b8382b;color:#d8c8b0}
+.err-tip{font-family:var(--mono);font-size:10.5px;color:#7d6050;letter-spacing:.04em}
+.pwd-box{max-width:600px;margin:26px auto 0;padding:20px;border:1px dashed #4a1512;text-align:center}
+.pwd-box p{color:#6f6459;font-size:11.5px;margin:0 0 12px;font-family:var(--mono)}
+.pwd-box input{background:#080606;border:1px solid #2a1a18;color:var(--ink);padding:9px;text-align:center;letter-spacing:4px;font-family:var(--mono);outline:none;width:160px}
+.pwd-box input.shake{animation:shake .4s}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pwd-box button{background:#2a1210;color:var(--ink);border:1px solid #4a1a16;padding:9px 18px;cursor:pointer;margin-left:8px;font-family:var(--serif)}
+.pwd-box button:hover{background:var(--red);color:#fff}
 
-/* 结案 */
-.reveal{position:fixed;inset:0;background:#080808;z-index:9998;overflow:auto;padding:8vh 24px 12vh}
-.rv-in{max-width:660px;margin:0 auto;color:#a89b84;font-size:14px;line-height:2.1;letter-spacing:.02em}
-.rv-in h2{font-size:12px;letter-spacing:.5em;color:#5c5344;font-weight:400;font-family:var(--mono);margin:0 0 42px;text-align:center}
-.rvl{display:flex;gap:18px;opacity:0;margin-bottom:16px}
-.rvl .d{font-family:var(--mono);font-size:10.5px;color:#8a2119;flex:none;padding-top:5px;letter-spacing:.05em}
-.rvl .t{color:#b3a68e}
-.rvl.key .t{color:#e0d3b8}
-.rv-end{margin-top:56px;opacity:0}
-.rv-end p{margin:0 0 10px;color:#d9cbb0;font-family:var(--kai);font-size:16px;letter-spacing:.06em}
-.rv-end .m{font-family:var(--mono);font-size:10px;color:#4a4335;letter-spacing:.4em;margin-top:40px}
-.rv-back{display:inline-block;margin-top:46px;font-family:var(--mono);font-size:11px;color:#5c5344;letter-spacing:.14em;border-bottom:1px solid #2a2520;padding-bottom:2px}
-.rv-back:hover{color:#a89b84;text-decoration:none}
+.hidden-page{background:#050303;min-height:100vh;padding:60px 20px;color:#8a7a6a}
+.hidden-inner{max-width:640px;margin:0 auto;font-family:var(--mono);font-size:13px;line-height:2}
+.hidden-inner h2{color:#c0392b;font-size:15px;letter-spacing:.3em;font-family:var(--serif);text-align:center;margin:0 0 30px}
+.hidden-inner .line{margin-bottom:6px}
+.hidden-inner .key{color:#d8503f}
+.hidden-inner .back{margin-top:40px;display:inline-block}
 
-/* 13层 */
-.dark-page{background:#0b0b0c;color:#8b8272;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:40px}
-.dark-page figure{margin:0;width:min(440px,88vw)}
-.dark-page figcaption{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:#4a4335;margin-top:10px}
-.dark-page p{font-family:var(--kai);font-size:15px;letter-spacing:.1em;color:#8b8272}
+.ending{position:fixed;inset:0;background:#050303;z-index:9999;display:flex;align-items:center;justify-content:center;padding:24px}
+.ending-inner{max-width:560px;text-align:center}
+.ending h1{font-family:var(--serif);font-size:22px;letter-spacing:.4em;color:#e5432f;text-indent:.4em;margin:0 0 30px}
+.ending p{font-family:var(--mono);font-size:12.5px;color:#8a7a6a;line-height:2.2;margin:0 0 8px}
+.ending .big{font-family:var(--serif);font-size:15px;color:#d9cbb0;letter-spacing:.1em;margin:26px 0}
+.ending button{margin-top:30px;background:#2a1210;border:1px solid #4a1a16;color:#c8bcb0;padding:10px 26px;font-family:var(--serif);letter-spacing:.2em;cursor:pointer;font-size:13px}
+.ending button:hover{background:#b3352a;color:#fff}
+.ending.good h1{color:#d8503f}
+
+.err404{text-align:center;padding:80px 20px}
+.err404 h1{font-size:64px;color:var(--red);font-family:var(--mono);font-weight:400;margin:0;letter-spacing:.1em}
+.err404 p{color:var(--ink3);font-size:13px;margin:10px 0}
+.err404 .hid{font-size:13px;margin-top:20px;display:inline-block}
+
+#float-btns{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:200}
+#float-btns button{width:40px;height:40px;border-radius:50%;background:#2a1210;border:1px solid #4a1a16;color:#d8c8b8;font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:.3s}
+#float-btns button.show{opacity:1;pointer-events:auto}
+#float-btns button:hover{background:var(--red);color:#fff}
+
+.glitch-overlay{position:fixed;inset:0;z-index:9997;pointer-events:none;background:#050303;opacity:0;transition:opacity .3s}
+.glitch-overlay.on{opacity:1;animation:glitchShake .15s infinite}
+.glitch-overlay .txt{position:absolute;inset:0;padding:40px;font-family:var(--mono);font-size:12px;color:#4a2018;line-height:1.6;word-break:break-all;overflow:hidden;white-space:pre-wrap;opacity:.7}
+@keyframes glitchShake{0%{transform:translate(0,0)}25%{transform:translate(-2px,1px)}50%{transform:translate(2px,-1px)}75%{transform:translate(-1px,-2px)}100%{transform:translate(1px,2px)}}
+body.glitching #app{animation:glitchHue .1s infinite}
+@keyframes glitchHue{0%{filter:hue-rotate(0)}50%{filter:hue-rotate(120deg) contrast(1.8)}100%{filter:hue-rotate(-40deg)}}
+
+#toast-layer{position:fixed;right:18px;bottom:120px;z-index:9996;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.toast{background:#1a0d0b;border:1px solid var(--red2);color:#d8c8b8;padding:10px 14px;font-size:12.5px;box-shadow:0 4px 20px rgba(0,0,0,.7);max-width:280px;animation:toastIn .4s;font-family:var(--serif);line-height:1.7}
+.toast b{color:var(--red3)}
+@keyframes toastIn{from{transform:translateX(40px);opacity:0}to{transform:translateX(0);opacity:1}}
+
+.footer{border-top:1px solid var(--line);margin-top:40px;padding:16px 0 40px;font-size:11px;color:#6a5a50;font-family:var(--mono);line-height:2;text-align:center}
 
 @media (max-width:720px){
   .post{grid-template-columns:1fr}
-  .pu{display:flex;align-items:center;gap:12px;text-align:left;border-right:none;border-bottom:1px solid var(--line);padding:10px 14px}
-  .av{width:40px;height:40px;margin:0}
-  .ps{display:none}.rk{margin:0}.un{font-size:13px}
-  .pc{padding:14px 16px 18px}
-  .col-a,.col-n{display:none}
-  .col-l{width:88px;font-size:11px}
-  .board{border-width:8px;min-width:1000px}
-  .board-page{margin:0 -12px;padding:18px 12px 60px}
-  .board-hint{display:block;padding:0 2px 10px}
-  .bsub{font-size:11.5px;line-height:1.8}
-  .main{padding:14px 12px 40px}
-  .tbi{height:48px}.logo{font-size:19px}.tnav{display:none}
-  .bp-head{flex-wrap:wrap}.bp-head .sub{display:none}
-  .papercard{font-size:9px}
-  .papercard .cn{font-size:11.5px}
-  .papercard .ct{font-size:8.5px}
-  .papercard .cd{font-size:7.5px}
-  .papercard .cq{font-size:9px}
-  .stub .sc{font-size:8px}
-  .stub .sc b{font-size:10px}
-  .billcard{font-size:7.5px}
-  .billcard .bh{font-size:9px}
-  .dutycard{font-size:7px}
-  .guide{font-size:12px}
-  .nitem{font-size:12.5px;gap:10px;padding-left:10px}
-  .board-ctl{gap:10px}
-  .pnum{font-size:10px}
-  .solvebtn{padding:8px 18px;font-size:12px;letter-spacing:.16em}
-  .hintbtn{padding:8px 12px;font-size:10px}
+  .pu{display:flex;align-items:center;gap:10px;text-align:left;border-right:none;border-bottom:1px solid var(--line);padding:9px 12px}
+  .av{width:38px;height:38px;margin:0}
+  .ps,.rk{display:none}
+  .pc{padding:12px 14px 16px}
+  .pm-page{grid-template-columns:1fr}
+  .pm-page .pm-list{display:none;border-right:none}
+  .pm-page .pm-conv{display:none}
+  .pm-page.show-list .pm-list{display:block}
+  .pm-page:not(.show-list) .pm-conv{display:flex}
+  .pm-back-mobile{display:inline-block}
+  .board{height:520px;border-width:6px}
+  .clue-card{min-width:100px;max-width:140px;font-size:10px}
+  .col-a,.col-n,.col-l{display:none}
+  .tbi{height:48px}.logo{font-size:18px}.tnav{font-size:12px;gap:10px}
 }
 </style>
 </head>
 <body>
 <div id="app"></div>
+<div id="toast-layer"></div>
+<div id="float-btns">
+  <button id="backtop" title="回到顶部">↑</button>
+  <button id="backbottom" title="去到最底部">↓</button>
+</div>
+<div class="glitch-overlay" id="glitchOverlay"><div class="txt" id="glitchTxt"></div></div>
 
 <script>
 /* ============================================================
-   夜航船 · 灵异怪谈 · 江北区专版
-   ============================================================ */
-
-const FIG = {
-  door:`<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-    <defs><filter id="fb"><feGaussianBlur stdDeviation="1.1"/></filter>
-    <filter id="fn"><feTurbulence baseFrequency="0.85" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter></defs>
-    <rect width="400" height="250" fill="#191919"/><rect y="130" width="400" height="120" fill="#0e0e0f"/>
-    <rect x="0" y="126" width="400" height="7" fill="#6d675c" opacity=".5"/>
-    <rect x="0" y="133" width="400" height="2" fill="#000" opacity=".8"/>
-    <ellipse cx="205" cy="212" rx="162" ry="21" fill="#333b40" opacity=".9"/>
-    <ellipse cx="205" cy="209" rx="132" ry="12" fill="#5c666b" opacity=".42"/>
-    <ellipse cx="160" cy="204" rx="26" ry="4" fill="#8b9599" opacity=".5" filter="url(#fb)"/>
-    <g transform="rotate(-7 200 214)"><rect x="176" y="202" width="48" height="29" rx="1" fill="#cfc7b4" opacity=".92"/>
-    <rect x="182" y="209" width="31" height="2.4" fill="#8a826f"/><rect x="182" y="215" width="20" height="2" fill="#9a917c"/>
-    <rect x="182" y="220" width="26" height="2" fill="#9a917c"/></g>
-    <rect width="400" height="250" filter="url(#fn)" opacity=".11"/></svg>`,
-
-  peek:`<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-    <defs><filter id="fp"><feTurbulence baseFrequency="1.1" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter>
-    <filter id="pb"><feGaussianBlur stdDeviation="3.4"/></filter></defs>
-    <rect width="400" height="250" fill="#0a0a0b"/>
-    <circle cx="200" cy="125" r="96" fill="#141416"/>
-    <circle cx="200" cy="125" r="88" fill="#2b2f31"/>
-    <g filter="url(#pb)">
-      <ellipse cx="200" cy="98" rx="27" ry="30" fill="#111"/>
-      <path d="M150 220 q50 -78 100 0 z" fill="#1a3d5c"/>
-      <rect x="152" y="150" width="96" height="16" fill="#7d6420"/>
-    </g>
-    <circle cx="200" cy="125" r="88" fill="none" stroke="#000" stroke-width="16" opacity=".85"/>
-    <rect width="400" height="250" filter="url(#fp)" opacity=".3"/></svg>`,
-
-  wash:`<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-    <defs><filter id="fw"><feTurbulence baseFrequency="0.7" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter></defs>
-    <rect width="400" height="250" fill="#0c0d0e"/><rect y="118" width="400" height="132" fill="#1b2124"/>
-    <ellipse cx="200" cy="160" rx="180" ry="34" fill="#2a3336" opacity=".8"/>
-    <ellipse cx="140" cy="176" rx="70" ry="11" fill="#3f4a4d" opacity=".55"/>
-    <ellipse cx="280" cy="196" rx="58" ry="9" fill="#3a4447" opacity=".45"/>
-    <rect x="148" y="86" width="118" height="13" fill="#c9a227" opacity=".82"/>
-    <circle cx="205" cy="70" r="42" fill="#141819" stroke="#2a3234" stroke-width="2"/>
-    <circle cx="205" cy="70" r="30" fill="#0d1011"/>
-    <ellipse cx="96" cy="205" rx="26" ry="8" fill="#d8d4c8" opacity=".28"/>
-    <rect width="400" height="250" filter="url(#fw)" opacity=".16"/></svg>`,
-
-  meter:`<svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
-    <defs><filter id="fm"><feTurbulence baseFrequency="0.9" numOctaves="2"/><feColorMatrix type="saturate" values="0"/></filter></defs>
-    <rect width="400" height="250" fill="#221f1b"/>
-    <circle cx="200" cy="118" r="94" fill="#d8d2c2"/><circle cx="200" cy="118" r="86" fill="#eae4d4"/>
-    <circle cx="200" cy="118" r="66" fill="#15130f"/>
-    <text x="200" y="130" text-anchor="middle" font-family="monospace" font-size="34" letter-spacing="5" fill="#e8e2d2">002147</text>
-    <text x="200" y="152" text-anchor="middle" font-family="monospace" font-size="9" letter-spacing="3" fill="#7d7563">B-1147</text>
-    <circle cx="200" cy="186" r="7" fill="#8b2f22"/>
-    <rect width="400" height="250" filter="url(#fm)" opacity=".13"/></svg>`
+   状态 + 存档
+============================================================ */
+const STATE = {
+  user:null,
+  readThreads:new Set(),
+  clues:new Set(),
+  links:{},
+  pmRead:{},
+  blockedCount:0,
+  glitchTriggered:false,
+  hiddenUnlocked:false,
+  suspectUnlocked:false,
+  badEndTriggered:false,
+  pmOpen:null,
+  guideClosed:false,
+  seenExif:new Set(),
+  linkErrors:0,
+  linkErrorsWarned:false,
 };
-
-function fig(kind, cap){
-  return `<figure class="fig"><div class="fig-in">${FIG[kind]}</div><figcaption>${cap}</figcaption></figure>`;
+function saveState(){
+  try{
+    localStorage.setItem('guaitan_save_v4', JSON.stringify({
+      user:STATE.user,
+      readThreads:[...STATE.readThreads],
+      clues:[...STATE.clues],
+      links:STATE.links,
+      pmRead:STATE.pmRead,
+      blockedCount:STATE.blockedCount,
+      glitchTriggered:STATE.glitchTriggered,
+      hiddenUnlocked:STATE.hiddenUnlocked,
+      suspectUnlocked:STATE.suspectUnlocked,
+      badEndTriggered:STATE.badEndTriggered,
+      guideClosed:STATE.guideClosed,
+      seenExif:[...STATE.seenExif],
+      linkErrors:STATE.linkErrors,
+      linkErrorsWarned:STATE.linkErrorsWarned,
+    }));
+  }catch(e){}
 }
-
-const THREADS = [
-{
-  id:1, title:'十三楼的水声', tag:'我住顶楼，可楼上一直有人在洗澡',
-  author:'南风', av:'g1', reg:'2009-03-11', posts:34, last:'2011-10-02',
-  time:'2011-06-30 23:47', views:'4,208', replies:12,
-  lr:'2019-11-14 21:30', lrby:'雨停之前',
-  sig:'我住 1101。',
-  body:`
-    <p>先说下我家。</p>
-    <p>建设路 37 号，纺织厂的老家属楼，九三年盖的，十一层，没电梯。楼梯间的墙刷的是绿漆，一半高，上面是白的。现在绿的那半已经黄了。</p>
-    <p>我住 11 楼，最里面那户，<b>1101</b>。一梯四户，我一个人，住了六年。</p>
-    <p>从上个月开始，凌晨一点多，天花板上会有水声。</p>
-    <p>不是水管咕噜咕噜那种。是洗澡的声音。水打在瓷砖上的声音，一片一片的，中间会停一下，然后接着来。<br>
-       洗完还有人挪凳子的声音。塑料凳子，在地上拖，“吱——”一声，很短。</p>
-    <p>我住顶楼。</p>
-    <p>第一次听见我以为是楼上有人，第二天去问物业。物业的老陈说楼上是设备层，没人住，也上不去。<br>
-       我说那水声是什么。他说水管。<br>
-       我说水管会挪凳子吗。<br>
-       他没说话。</p>
-    <p>我自己上去过一次。楼梯到 11 楼就断了，再往上是扇铁门，锁着，锈得很厉害。门缝底下有水渗出来，不多，一小条。<br>
-       我蹲下去摸了一下。是干净的。不像污水，像刚放出来的自来水，还有点温。</p>
-    <p>我在门口站了大概五分钟。里面一直有水声。<br>
-       中间停了一次，然后又开了。</p>
-    <p>我不太敢再上去了。</p>
-    <p>对了，我把我听见的日期记在本子上了：<b>六月三十、七月三十一、八月三十一</b>。<br>
-       都是月末。我不知道这算不算什么。</p>
-    <p>有没有人知道这是怎么回事。</p>
-    <p class="dim">（照片在下面）</p>
-    <p class="ghost">我在的，你不用上来。</p>`,
-  fig:{kind:'door', cap:'IMG_0431.jpg　2011-07-03 22:41'},
-  floors:[
-    {name:'老K', av:'g2', reg:'2005-08-02', posts:'2,140', last:'2019-11-02', time:'2011-07-01 00:12',
-     body:'<p>水箱就在上面。十一层的老楼都是二次供水，顶层上面是设备层，整栋楼的水都从那儿走。</p><p>水声正常。</p>'},
-    {name:'南风', av:'g1', reg:'2009-03-11', posts:34, last:'2011-10-02', time:'2011-07-01 00:20', op:true,
-     body:'<p>那挪凳子的声音呢。</p>'},
-    {name:'老K', av:'g2', reg:'2005-08-02', posts:'2,140', last:'2019-11-02', time:'2011-07-01 00:26',
-     body:'<p>……热胀冷缩吧。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2011-07-02 01:55',
-     body:'<p>我开 53 路的，跑夜班。建设路那片的二次供水 2010 年统一改过，设备层全部封存了，钥匙不在物业手上，在自来水公司。</p><p>你们物业要是没钥匙，那扇门就不该开得了。</p><p>开得了，说明有人开过。</p>'},
-    {name:'南风', av:'g1', reg:'2009-03-11', posts:34, last:'2011-10-02', time:'2011-07-02 02:10', op:true,
-     body:'<p>那我怎么办。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2011-07-02 02:19',
-     body:'<p><b class="hl">把门口那滩水擦干净。别让人知道你注意到了。</b></p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2011-07-02 09:41',
-     body:'<p>姑娘，你一个人住？我也是这一片的，幸福里 3 号楼。</p><p>我们这栋楼去年也有过这种事。半夜有人敲门，开门没人，地上一滩水。</p>'},
-    {name:'南风', av:'g1', reg:'2009-03-11', posts:34, last:'2011-10-02', time:'2011-07-02 10:03', op:true,
-     body:'<p>阿姨，后来呢。</p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2011-07-02 10:20',
-     body:'<p>后来没了。我也没敢开过门。</p>'},
-    {name:'南风', av:'g1', reg:'2009-03-11', posts:34, last:'2011-10-02', time:'2011-07-03 22:47', op:true,
-     body:'<p>照片。</p><p>门缝下面的水，水里泡着一张卡片。我抠出来看了，上面印着“抄表”两个字，剩下的泡烂了，看不清。背面是复写纸的那种蓝，有一排小孔，像是从本子上撕下来的。</p>'},
-    {name:'路人甲乙丙', av:'g5', reg:'2012-06-14', posts:6, last:'2013-02-11', time:'2011-07-04 11:02',
-     body:'<p>楼上这位大哥说得也太吓人了，就是个抄表卡吧，掉地上泡水了。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-14 21:30', me:true,
-     body:'<p>楼主还在吗。</p>'}
-  ]
-},
-{
-  id:2, title:'末班车上多出来的一站', tag:'建材市场站 2011 年就拆了，可有人在那儿上车',
-  author:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04',
-  time:'2012-02-29 02:11', views:'2,916', replies:9,
-  lr:'2019-11-14 21:33', lrby:'雨停之前',
-  sig:'53 路，末班，22:40。',
-  body:`
-    <p>53 路末班，22:40 火车站发车，我跑了九年。<br>
-       这条线十九站，最后一站是江北开发区。中间有一站叫建材市场，2011 年拆的，市场推平了，站牌还立着，铁皮的，字掉了一半。</p>
-    <p>没人等车，我也不停。快两年了，一次都没停过。</p>
-    <p>昨天晚上有人按铃。</p>
-    <p>我从后视镜看了一眼，没人站起来。我又按了一下报站，还是没人。我以为是哪个按钮卡住了，就靠边停了，开门。</p>
-    <p>上来一个女的。<br>
-       穿雨衣。那种老式的，深绿色的，帽子扣着。那几天没下雨，白天二十多度。</p>
-    <p>她投了币，往后走，坐在最后一排靠窗。<br>
-       我从后视镜里看她。她一直低着头。头发在滴水，从帽檐下面滴，滴在座位上。</p>
-    <p>我问了一句“到哪儿”，她没应。</p>
-    <p>到终点站，我熄火，回头喊了一声。<br>
-       座位上没人。<br>
-       那滩水还在。座位上还有一只塑料袋，叠得整整齐齐的，放在水中间。</p>
-    <p>袋子是干的。</p>
-    <p>我拿起来看了。是那种装东西的袋子，上面印着蓝色的字：江州市自来水公司。<br>
-       <b>袋子不是空的。</b>里面有一张纸。复写的，蓝字，边上有一排小孔，是从本子上撕下来的。</p>
-    <p>上面写着：<b class="hl">建设路 37 号　1101</b>。<br>
-       后面跟着日期：<b>9 月 30 日</b>。<br>
-       再后面是一个签名的字头，只有一个字，看不全，像“李”。</p>
-    <p>我把这张纸夹在行车记录本里了。我没敢交出去。交给谁呢，说我在末班车上捡到的？</p>
-    <p>建材市场那一站，站牌后面是什么，有人知道吗。</p>`,
-  fig:null,
-  floors:[
-    {name:'老K', av:'g2', reg:'2005-08-02', posts:'2,140', last:'2019-11-02', time:'2012-02-29 08:15',
-     body:'<p>站牌后面是围墙吧，里面空的。</p>'},
-    {name:'江北小张', av:'g5', reg:'2010-09-03', posts:52, last:'2012-12-20', time:'2012-02-29 09:40',
-     body:'<p>周师傅你是不是困了。跑夜班的都这样，我表哥开出租，也说过半夜拉到过穿雨衣的。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2012-02-29 10:02', op:true,
-     body:'<p>我没困。我开了九年夜班。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2012-02-29 10:14', op:true,
-     body:'<p>还有一件事我没写。</p><p>她上车的时候，雨衣下摆是湿的，一直在滴水。滴在过道上，从车头滴到车尾，一路。</p><p>我第二天早上回去看，那一路的水痕，是从站牌后面那个围墙缺口开始的。</p>'},
-    {name:'江北小张', av:'g5', reg:'2010-09-03', posts:52, last:'2012-12-20', time:'2012-02-29 10:31',
-     body:'<p>那女的可能是从围墙那边翻过来的。那边好像在施工。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2012-02-29 11:15', op:true,
-     body:'<p>那边没施工。2011 年拆完就没人管了。</p><p>我今天早上去看了一眼。围墙缺了个口子，里面是个水泥台子，上面一个井盖。</p><p><b class="hl">井盖是开的。</b></p>'},
-    {name:'路人甲乙丙', av:'g5', reg:'2012-06-14', posts:6, last:'2013-02-11', time:'2012-02-29 12:44',
-     body:'<p>别说了别说了。</p>'},
-    {name:'风穿过走廊', av:'g5', reg:'2012-01-30', posts:3, last:'2012-03-02', time:'2012-03-01 00:44',
-     body:'<p>周师傅，你贴的那张纸，上面写的 1101，是不是建设路 37 号？</p><p>我去年在那儿住过。</p>'},
-    {name:'夜班老周', av:'g3', reg:'2008-11-24', posts:87, last:'2012-03-04', time:'2012-03-03 23:58', op:true,
-     body:'<p>删了。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-14 21:33', me:true,
-     body:'<p>周师傅，那个井盖 2013 年 6 月才封上。</p>'}
-  ]
-},
-{
-  id:3, title:'每个月最后一天的半夜，有人敲我的门', tag:'三下，不轻不重。开门没人，地上一滩水',
-  author:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30',
-  time:'2012-05-31 01:38', views:'6,041', replies:8,
-  lr:'2019-11-14 21:41', lrby:'雨停之前',
-  sig:'我一个人住。',
-  body:`
-    <p>我今年七十，一个人住幸福里 3 号楼，三楼西户，住了二十几年。<br>
-       我睡眠不好，每天一点左右会醒一次，上厕所，然后再睡。</p>
-    <p>前年就开始了。每个月最后一天的半夜，有人敲我的门。</p>
-    <p>三下。不轻不重。间隔很长，笃、笃、笃，敲完就没了。</p>
-    <p>第一次我以为听错了。第二次我起来开门，门口没人，地上有一小滩水。<br>
-       第三次也是。</p>
-    <p>我数了。到昨天，一共十五次。</p>
-    <p>上个月我让儿子给我装了个猫眼。带拍照的那种，五十块钱，网上买的。<br>
-       昨天晚上我没开灯，从猫眼里看出去——</p>
-    <p>一个男的，站在门口，低着头。穿蓝色的衣服，那种工厂的工装，肩上有一条黄色的反光条。<br>
-       他手里拿着一个本子，在写。<br>
-       写了大概两分钟，合上本子，转身下楼了。<br>
-       他下楼的时候，我看见他鞋是湿的。</p>
-    <p>他一直没抬头。所以我也只拍到这么一张。</p>
-    <p class="dim">（照片在下面）</p>
-    <p>今天白天我跟楼下的老李说了，老李说可能是抄水表的。<br>
-       可是抄水表的是个女的，姓张，我认识，她白天来，一年来四次。<br>
-       而且抄水表不会半夜一点。</p>
-    <p>还有一件事。他下楼以后，我听见楼下有两声很轻的响，像是有人把什么东西放在地上。</p>
-    <p>第二天早上，一楼的楼道里多了一个塑料桶。</p>`,
-  fig:{kind:'peek', cap:'猫眼拍照 2012-05-31 01:11'},
-  floors:[
-    {name:'晚归的猫', av:'g5', reg:'2010-07-21', posts:41, last:'2012-11-02', time:'2012-05-31 02:20',
-     body:'<p>我也住幸福里，5 号楼。</p><p>阿姨你说的那个桶，是不是白色的，上面有字？</p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2012-05-31 02:31', op:true,
-     body:'<p>是白的。上面有字，我看不清，好像是“37”。</p>'},
-    {name:'晚归的猫', av:'g5', reg:'2010-07-21', posts:41, last:'2012-11-02', time:'2012-05-31 02:40',
-     body:'<p>……37 号不是我们小区。</p><p>37 号在建设路西头。</p>'},
-    {name:'老K', av:'g2', reg:'2005-08-02', posts:'2,140', last:'2019-11-02', time:'2012-05-31 09:12',
-     body:'<p>会不会是查煤气的。</p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2012-05-31 09:40', op:true,
-     body:'<p>查煤气的也白天来。</p>'},
-    {name:'江北小张', av:'g5', reg:'2010-09-03', posts:52, last:'2012-12-20', time:'2012-05-31 10:05',
-     body:'<p>阿姨，你儿子电话多少，让他回来住几天吧。</p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2012-05-31 10:22', op:true,
-     body:'<p>他忙。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-14 21:41', me:true,
-     body:'<p>您后来搬走了吗。</p>'}
-  ]
-},
-{
-  id:4, title:'地下室的洗衣机，半夜自己在转', tag:'2010 年就断电了，封条都脆了',
-  author:'晚归的猫', av:'g5', reg:'2010-07-21', posts:41, last:'2012-11-02',
-  time:'2012-10-31 03:02', views:'1,873', replies:6,
-  lr:'2019-11-14 21:52', lrby:'雨停之前',
-  sig:'',
-  body:`
-    <p>幸福里 B 区地下车库，最里面，消防通道旁边，有个公共洗衣房。<br>
-       2010 年就停了，门上贴着物业的封条，封条都脆了。</p>
-    <p>上周三我加班，两点多才回来。车停好往里走，听见洗衣机在转。<br>
-       不是幻觉。就是那种老式波轮洗衣机，脱水的时候“咣当咣当”的。</p>
-    <p>我推门进去。</p>
-    <p>封条断了，门是开的。<br>
-       地上全是水，漫到脚踝。<br>
-       <b>是热的。</b></p>
-    <p>最里面那台机器在转。滚筒里有一件衣服，蓝色的，工装，我看见了反光条。<br>
-       水是红色的，很淡，像洗过很多遍。</p>
-    <p>水里有东西。一个白色的塑料桶，倒在水里，桶身上用记号笔写了字。</p>
-    <p>我看了两遍，以为是物业的编号。可是这里是 B 区，5 号楼。</p>
-    <p>桶上写的是：<b class="hl">37 号</b>。</p>
-    <p>我在门口站了大概十秒。然后退出来，把门带上，跑回家，锁门，报了物业。</p>
-    <p>物业第二天去看，说里面是干的，机器没通电，电闸拉了两年了。</p>
-    <p>我今天又去看了一次。地是干的。封条重新贴上了。桶没了。<br>
-       但是我拍了照。</p>
-    <p class="dim">（照片在下面）</p>
-    <p>我不求别的。我就想知道有没有人是 B 区的，那天晚上有没有也听见。</p>`,
-  fig:{kind:'wash', cap:'IMG_0778.jpg　2012-10-31 02:58'},
-  floors:[
-    {name:'老K', av:'g2', reg:'2005-08-02', posts:'2,140', last:'2019-11-02', time:'2012-10-31 08:33',
-     body:'<p>楼主你是不是加完班喝酒了。</p>'},
-    {name:'晚归的猫', av:'g5', reg:'2010-07-21', posts:41, last:'2012-11-02', time:'2012-10-31 09:02', op:true,
-     body:'<p>我没喝酒。我拍照了。</p>'},
-    {name:'江北小张', av:'g5', reg:'2010-09-03', posts:52, last:'2012-12-20', time:'2012-10-31 09:50',
-     body:'<p>这照片太黑了，什么都看不出来。</p>'},
-    {name:'晚归的猫', av:'g5', reg:'2010-07-21', posts:41, last:'2012-11-02', time:'2012-10-31 10:11', op:true,
-     body:'<p>B 区，最里面，消防通道旁边。</p><p>你们去看就知道了，地漏边上还有一圈印子。</p><p>那个桶，白色，装了将近一半的水，一个人提得动。</p>'},
-    {name:'三楼西户', av:'g4', reg:'2011-01-19', posts:19, last:'2012-06-30', time:'2012-10-31 15:22',
-     body:'<p>孩子，那个桶我见过。</p><p>五月的时候我跟你说过，我们楼道里多了一个桶。白色的。后来不见了。</p><p>你现在又说有桶。你们 B 区跟我们 3 号楼，隔着大半个小区。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-14 21:52', me:true,
-     body:'<p>B 区现在封了。进不去。</p>'}
-  ]
-},
-{
-  id:5, title:'凌晨一点十分，我家的水表在走字', tag:'我一个人住，十一点就睡了',
-  author:'夏至', av:'g2', reg:'2012-04-11', posts:7, last:'2013-01-09',
-  time:'2013-01-08 23:56', views:'612', replies:5,
-  lr:'2019-11-30 23:57', lrby:'雨停之前',
-  sig:'',
-  body:`
-    <p>我一个人住，十一点睡，七点起。<br>
-       去年四月搬来的，建设路 37 号，11 楼，<b>1101</b>。</p>
-    <p>房子是一室一厅，老户型，租金比周围便宜一半。房东说上一户走得急，空了半年，所以便宜。</p>
-    <p>上个月水费多了三十七块。我一开始以为抄错了。</p>
-    <p>我去看水表，记了三天。每天半夜起来看一次。</p>
-    <p>第一天：1:10 起，1:40 停。走 0.02 吨。<br>
-       第二天：一样。<br>
-       第三天：一样。</p>
-    <p>我白天不在家，晚上十一点以后不用水。洗衣机周末才开一次。<br>
-       这 0.02 吨，是洗一次澡的量。</p>
-    <p>我打电话给水务。第二天来人了，一个师傅，看了表，看了管，说没问题。<br>
-       我说那表为什么走。<br>
-       他说可能是别人家的表接错了。他说他回去查。</p>
-    <p>他没再联系我。</p>
-    <p>我住 11 楼，顶楼。<br>
-       我今天问物业，我这栋楼的顶楼上面是什么。物业说设备层。</p>
-    <p>我现在不敢在家洗澡。我在公司洗。</p>
-    <p>还有一件事，不知道有没有关系。</p>
-    <p>我搬来的时候，阳台柜子里有半瓶洗发水，还有个塑料盆。房东说都是上一户的，让我扔了。<br>
-       我没扔。洗发水还剩三分之一。</p>
-    <p>上一个住在这儿的人，是什么时候走的。</p>
-    <p class="dim">（照片在下面，表号 B-1147）</p>`,
-  fig:{kind:'meter', cap:'IMG_1204.jpg　2013-01-07 01:12'},
-  floors:[
-    {name:'游客', av:'g5', rank:'游客', reg:'—', posts:'—', last:'—', time:'2013-01-09 00:31',
-     body:'<p>楼主你先别自己吓自己，老楼管道串水很常见。</p>'},
-    {name:'游客', av:'g5', rank:'游客', reg:'—', posts:'—', last:'—', time:'2013-01-09 01:07',
-     body:'<p>这种事别发网上。删了吧。</p>'},
-    {name:'夏至', av:'g2', reg:'2012-04-11', posts:7, last:'2013-01-09', time:'2013-01-09 22:14', op:true,
-     body:'<p>我不会删。我要留着。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-14 22:03', me:true,
-     body:'<p>楼主还在吗。</p>'},
-    {name:'雨停之前', av:'g1', reg:'2014-05-06', posts:'1,024', last:'2019-11-30', time:'2019-11-30 23:57', me:true,
-     body:'<p>我打了你留的手机号，是空号。</p>'}
-  ]
+function loadState(){
+  try{
+    const d = localStorage.getItem('guaitan_save_v4');
+    if(!d) return;
+    const o = JSON.parse(d);
+    STATE.user = o.user || null;
+    STATE.readThreads = new Set(o.readThreads || []);
+    STATE.clues = new Set(o.clues || []);
+    STATE.links = o.links || {};
+    STATE.pmRead = o.pmRead || {};
+    STATE.blockedCount = o.blockedCount || 0;
+    STATE.glitchTriggered = !!o.glitchTriggered;
+    STATE.hiddenUnlocked = !!o.hiddenUnlocked;
+    STATE.suspectUnlocked = !!o.suspectUnlocked;
+    STATE.badEndTriggered = !!o.badEndTriggered;
+    STATE.guideClosed = !!o.guideClosed;
+    STATE.seenExif = new Set(o.seenExif || []);
+    STATE.linkErrors = o.linkErrors || 0;
+    STATE.linkErrorsWarned = !!o.linkErrorsWarned;
+  }catch(e){}
 }
-];
+function clearSave(){ try{ localStorage.removeItem('guaitan_save_v4'); }catch(e){} }
 
-/* ================= 外壳 ================= */
-function shell(inner){
-  return `
-  <div class="topbar"><div class="wrap tbi">
-    <a href="#/" class="logo">夜航船</a>
-    <span class="lsub">bbs.yehangchuan.net</span>
-    <div class="tnav"><a href="#/" style="color:#a2948a">首页</a><span>论坛</span><span>搜索</span>
-      <span class="off">登录</span><span class="off">注册</span></div>
-  </div></div>
-  <div class="navbar"><div class="wrap nbi">
-    <a href="#/">夜航船</a><i>›</i><a href="#/">灵异怪谈</a><i>›</i><b>江北区专版</b>
-    <span class="nstat">今日: 0　昨日: 0　会员: 209</span>
-  </div></div>
-  <div class="wrap main">${inner}</div>
-  <div class="footer"><div class="wrap">
-    Powered by Discuz! 6.1.0 &nbsp;|&nbsp; © 2008-2019 夜航船 &nbsp;|&nbsp; GMT+8, 2019-11-30 23:59<br>
-    Processed in 0.031 second(s), 6 queries &nbsp;|&nbsp; 本版已于 2019 年 11 月关闭
-  </div></div>`;
-}
-
-/* ================= 首页 ================= */
-function renderIndex(){
-  const rows = THREADS.map(t=>`
-    <tr>
-      <td class="col-i"><span class="dot ${t.id===5?'hot':''}"></span></td>
-      <td><a href="#/t/${t.id}" class="tt">${t.title}</a><div class="tg">${t.tag}</div></td>
-      <td class="col-a">${t.author}</td>
-      <td class="col-n">${t.replies} / ${t.views}</td>
-      <td class="col-l">${t.lr}<br><b>${t.lrby}</b></td>
-    </tr>`).join('');
-
-  document.getElementById('app').innerHTML = shell(`
-  <div class="notice"><b>公告</b><span>本版已于 2019 年 11 月停止更新，仅作存档。新帖一律锁定。</span></div>
-  <h2 class="sec-title">江北区专版 <small>共 217 主题 · 3,116 帖</small></h2>
-  <table class="tbl"><thead><tr>
-    <th class="col-i"></th><th>主题</th><th class="col-a">作者</th>
-    <th class="col-n">回复/查看</th><th class="col-l">最后发表</th>
-  </tr></thead><tbody>${rows}</tbody></table>
-
-  <div class="rules">
-    <h4>本版规则</h4>
-    <span>一</span>禁止发布真实姓名、住址、电话、单位。<br>
-    <span>二</span>禁止转载未经证实的消息，禁止造谣。<br>
-    <span>三</span>违规帖一律移至 <a href="#/archive">回收站</a>，不再另行通知。<br>
-    <span>四</span>请勿挖坟。超过六个月无人回复的主题自动锁定。
-  </div>
-
-  <div class="online">
-    在线会员 - 共 1 人在线 - 1 会员(0 隐身), 0 游客 &nbsp;·&nbsp; <b>雨停之前</b><br>
-    版主: <b>雨停之前</b> &nbsp;·&nbsp; 本版成立于 2008-03-14 &nbsp;·&nbsp; 最后一帖 2013-01-09
-  </div>`);
-  document.title = '夜航船 · 灵异怪谈 · 江北区专版';
-}
-
-/* ================= 帖子 ================= */
-function postHTML(u, i, op){
-  const rank = u.rank || (op ? '楼主' : '注册会员');
-  return `
-  <div class="post ${u.me?'me':''}">
-    <aside class="pu">
-      <div class="av ${u.av||'g1'}"></div>
-      <div class="un">${u.name}</div>
-      <div class="rk">${rank}</div>
-      <div class="ps">
-        <span>帖子 ${u.posts||'—'}</span>
-        <span>注册 ${u.reg||'—'}</span>
-        <span class="last">最后登录 ${u.last||'—'}</span>
-      </div>
-    </aside>
-    <div class="pc">
-      <div class="phd"><span>发表于 ${u.time}</span><span class="fl">${i+1} 楼</span></div>
-      <div class="pb">${u.body}</div>
-      ${u.sig ? `<div class="sig">${u.sig}</div>` : ''}
-    </div>
-  </div>`;
-}
-
-function renderThread(id){
-  const t = THREADS.find(x=>x.id===id) || THREADS[0];
-  const op = {
-    name:t.author, av:t.av, reg:t.reg, posts:t.posts, last:t.last,
-    time:t.time, body:t.body + (t.fig ? fig(t.fig.kind, t.fig.cap) : ''), sig:t.sig, rank:'楼主'
-  };
-  const all = [op, ...t.floors];
-
-  document.getElementById('app').innerHTML = shell(`
-  <div class="backbar">
-    <div class="crumb"><a href="#/">夜航船</a> › <a href="#/">灵异怪谈</a> › <a href="#/">江北区专版</a> › 正文</div>
-  </div>
-  <div class="backbar" style="margin-bottom:16px">
-    <a href="#/" class="backlink">← 返回版面</a>
-    <a href="#/archive" class="backlink" style="opacity:.75">回收站</a>
-  </div>
-  <h1 class="th-title">${t.title}</h1>
-  <div class="th-sub">查看 ${t.views}　|　回复 ${t.replies}　|　发帖 ${t.time}</div>
-  ${all.map((u,i)=>postHTML(u,i,i===0)).join('')}
-  <div class="tailnav">
-    <a href="#/">← 返回列表</a>
-    <a href="#/t/${id===5?1:id+1}">下一篇 →</a>
-  </div>`);
-  document.title = (id===5 ? '别看了' : t.title) + ' · 夜航船';
-}
-
-function render404(){
-  document.getElementById('app').innerHTML = shell(`
-  <div style="padding:50px 0;text-align:center">
-    <h1 class="th-title" style="font-size:19px">该帖已被删除</h1>
-    <p style="color:#9b8f80;font-size:13.5px;margin-top:18px">
-      指定的主题不存在或已被删除。<br>删除理由：<b class="hl">楼主申请</b>。</p>
-    <div class="tailnav"><a href="#/">← 返回版面</a></div>
-  </div>`);
-}
-
-function render13(){
-  document.body.innerHTML = `<div class="dark-page">
-    <figure><div class="fig-in">${FIG.door}</div>
-    <figcaption>IMG_0431.jpg　门缝下面</figcaption></figure>
-    <p>你上来了。</p>
-    <p style="font-size:12px;color:#4a4335">这里没有十三楼。</p>
-  </div>`;
-  document.body.style.background = '#0b0b0c';
+/* ============================================================
+   工具
+============================================================ */
+const $ = s => document.querySelector(s);
+function esc(s){ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function now(){ const d=new Date(); return `${d.getMonth()+1}-${d.getDate()} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`; }
+function randGlitch(n){ const c='▚▞▓▒░█◎◈⌧⍟⍜⎔⏣'; let s=''; for(let i=0;i<n;i++) s+=c[Math.floor(Math.random()*c.length)]; return s; }
+function keyOf(a,b){ return [a,b].sort().join('|'); }
+function isLateNight(){ const h = new Date().getHours(); return h < 6 || h >= 23; }
+function toast(html){
+  const layer = $('#toast-layer');
+  if(!layer) return;
+  const d = document.createElement('div');
+  d.className = 'toast';
+  d.innerHTML = String(html).replace(/\n/g,'<br>');
+  layer.appendChild(d);
+  setTimeout(()=>d.remove(), 5500);
 }
 
 /* ============================================================
-   线索板 2.0 - 完美修复版
-   ============================================================ */
+   数据：帖子
+============================================================ */
+const THREADS = [
+  {
+    id:1, title:'顶楼的水声', author:'南风', av:'g1',
+    tag:'我住顶楼，楼上却每晚有人洗澡',
+    time:'2011-06-30 23:47', views:4208, replies:11, status:'lock', clue:'c1',
+    body:`<p>建设路 37 号，纺织厂老家属楼，十一层，没电梯。我住 11 楼最里面，<b>1101</b>。</p>
+      <p>从上个月开始，凌晨一点多，天花板上会有水声。水打在瓷砖上，一片一片的。洗完还有人挪凳子的声音——塑料凳子在地上拖，“吱——”一声，很短。</p>
+      <p>我住顶楼。</p>
+      <p>我去问物业老陈，他说楼上是设备层，没人住。我说那水声是什么，他说水管。我说水管会挪凳子吗，他没说话。</p>
+      <p>我上去过一次。楼梯到 11 楼就断了，再往上是扇铁门，锁着。门缝底下有水渗出来，一小条。<b class="hl">我蹲下去摸了一下。是干净的，还有点温。</b></p>
+      <p>对了，我把我听见的日期记在本子上了：<b>六月三十、七月三十一、八月三十一</b>。都是月末。</p>
+      <p>有没有人知道这是怎么回事。<span class="hid">这不是水声，是有人在上面洗东西。</span></p>`,
+    floors:[
+      {name:'老K',av:'g2',time:'2011-07-01 00:12',body:'<p>水箱就在上面。十一层老楼都是二次供水。水声正常。</p>'},
+      {name:'南风',av:'g1',time:'2011-07-01 00:20',op:true,body:'<p>那挪凳子的声音呢。</p>'},
+      {name:'老K',av:'g2',time:'2011-07-01 00:26',body:'<p>……热胀冷缩吧。</p>'},
+      {name:'夜班老周',av:'g3',time:'2011-07-02 01:55',body:'<p>我开 53 路夜班。建设路那片二次供水 2010 年统一改过，设备层全部封存，钥匙不在物业手上，在自来水公司。</p><p>你们物业要是没钥匙，那扇门就不该开得了。开得了，说明有人开过。</p>'},
+      {name:'南风',av:'g1',time:'2011-07-02 02:10',op:true,body:'<p>那我怎么办。</p>'},
+      {name:'夜班老周',av:'g3',time:'2011-07-02 02:19',body:'<p><b class="hl">把门口那滩水擦干净。别让人知道你注意到了。</b></p>'},
+      {name:'三楼西户',av:'g4',time:'2011-07-02 09:41',body:'<p>姑娘，你一个人住？我也是这一片的，幸福里 3 号楼。我们这栋楼去年也有过这种事。半夜有人敲门，开门没人，地上一滩水。</p>'},
+      {name:'南风',av:'g1',time:'2011-07-02 10:03',op:true,body:'<p>阿姨，后来呢。</p>'},
+      {name:'三楼西户',av:'g4',time:'2011-07-02 10:20',body:'<p>后来没了。我也没敢开过门。</p>'},
+      {name:'南风',av:'g1',time:'2011-07-03 22:47',op:true,body:'<p>照片。</p><p>门缝下面的水，水里泡着一张卡片。我抠出来看了，上面印着“抄表”两个字，剩下的泡烂了。背面是复写纸那种蓝，有一排小孔，像是从本子上撕下来的。</p>'},
+      {name:'路人甲乙丙',av:'g5',time:'2011-07-04 11:02',body:'<p>楼上这位大哥说得也太吓人了，就是个抄表卡吧，掉地上泡水了。</p>'},
+    ]
+  },
+  {
+    id:2, title:'末班车上多出来的一站', author:'夜班老周', av:'g3',
+    tag:'建材市场站 2011 年就拆了，可有人在那儿上车',
+    time:'2012-02-29 02:11', views:2916, replies:9, status:'lock', clue:'c2',
+    body:`<p>53 路末班，22:40 火车站发车，我跑了九年。中间有一站叫建材市场，2011 年拆的，站牌还立着，字掉了一半。没人等车，我也不停。快两年了，一次都没停过。</p>
+      <p>昨天晚上有人按铃。我从后视镜看了一眼，没人站起来。我以为是按钮卡住了，就靠边停了，开门。</p>
+      <p>上来一个女的。穿雨衣，老式的那种，深绿色的，帽子扣着。那几天没下雨，白天二十多度。</p>
+      <p>她投了币，往后走，坐在最后一排靠窗。头发在滴水，滴在座位上。我问“到哪儿”，她没应。</p>
+      <p>到终点站，我回头喊了一声。座位上没人。那滩水还在。座位上还有一只塑料袋，叠得整整齐齐的，放在水中间。</p>
+      <p>袋子是干的。</p>
+      <p>我拿起来看了。上面印着蓝色的字：<b>江州市自来水公司</b>。<b class="hl">袋子不是空的。</b>里面有一张纸。复写的，蓝字，边上有一排小孔。</p>
+      <p>上面写着：<b class="hl">建设路 37 号　1101</b>。日期：<b>9 月 30 日</b>。后面是签名的字头，只有一个字，看不全，像“李”。</p>
+      <p>我把这张纸夹在行车记录本里了。我没敢交出去。</p>
+      <p>建材市场那一站，站牌后面是什么，有人知道吗。<span class="hid">她不是从站牌上下来的。她是被从井里放上来的。</span></p>`,
+    floors:[
+      {name:'老K',av:'g2',time:'2012-02-29 08:15',body:'<p>站牌后面是围墙吧，里面空的。</p>'},
+      {name:'江北小张',av:'g5',time:'2012-02-29 09:40',body:'<p>周师傅你是不是困了。跑夜班的都这样。</p>'},
+      {name:'夜班老周',av:'g3',time:'2012-02-29 10:02',op:true,body:'<p>我没困。我开了九年夜班。</p>'},
+      {name:'夜班老周',av:'g3',time:'2012-02-29 10:14',op:true,body:'<p>还有一件事我没写。她上车的时候，雨衣下摆一直在滴水，从车头滴到车尾。我第二天早上回去看，那一路水痕，是从站牌后面那个围墙缺口开始的。</p>'},
+      {name:'江北小张',av:'g5',time:'2012-02-29 10:31',body:'<p>那女的可能是从围墙那边翻过来的。那边好像在施工。</p>'},
+      {name:'夜班老周',av:'g3',time:'2012-02-29 11:15',op:true,body:'<p>那边没施工。我今天早上去看了一眼。围墙缺了个口子，里面是个水泥台子，上面一个井盖。</p><p><b class="hl">井盖是开的。</b></p>'},
+      {name:'路人甲乙丙',av:'g5',time:'2012-02-29 12:44',body:'<p>别说了别说了。</p>'},
+      {name:'风穿过走廊',av:'g5',time:'2012-03-01 00:44',body:'<p>周师傅，你贴的那张纸，上面写的 1101，是不是建设路 37 号？我去年在那儿住过。</p>'},
+      {name:'夜班老周',av:'g3',time:'2012-03-03 23:58',op:true,body:'<p>删了。</p>'},
+    ]
+  },
+  {
+    id:3, title:'每个月最后一天的半夜，有人敲我的门', author:'三楼西户', av:'g4',
+    tag:'三下，不轻不重。开门没人，地上一滩水',
+    time:'2012-05-31 01:38', views:6041, replies:8, status:'lock', clue:'c3',
+    body:`<p>我今年七十，一个人住幸福里 3 号楼，三楼西户，住了二十几年。</p>
+      <p>前年就开始了。每个月最后一天的半夜，有人敲我的门。<b>三下。不轻不重。间隔很长，笃、笃、笃，敲完就没了。</b></p>
+      <p>第一次我以为听错了。第二次我起来开门，门口没人，地上有一小滩水。第三次也是。到昨天，一共十五次。</p>
+      <p>上个月我让儿子给我装了个猫眼，带拍照的那种。昨天晚上我没开灯，从猫眼里看出去——</p>
+      <p>一个男的，站在门口，低着头。穿蓝色的衣服，那种工厂的工装，肩上有一条黄色的反光条。他手里拿着一个本子，在写。写了大概两分钟，合上本子，转身下楼了。<b class="hl">他下楼的时候，我看见他鞋是湿的。</b></p>
+      <p>他一直没抬头。所以我也只拍到这么一张。</p>
+      <p>还有一件事。他下楼以后，我听见楼下有两声很轻的响，像是有人把什么东西放在地上。</p>
+      <p>第二天早上，一楼的楼道里多了一个塑料桶。<span class="hid">桶里装的不是水。是她的工作服。</span></p>`,
+    floors:[
+      {name:'晚归的猫',av:'g5',time:'2012-05-31 02:20',body:'<p>我也住幸福里，5 号楼。阿姨你说的那个桶，是不是白色的，上面有字？</p>'},
+      {name:'三楼西户',av:'g4',time:'2012-05-31 02:31',op:true,body:'<p>是白的。上面有字，我看不清，好像是“37”。</p>'},
+      {name:'晚归的猫',av:'g5',time:'2012-05-31 02:40',body:'<p>……37 号不是我们小区。37 号在建设路西头。</p>'},
+      {name:'老K',av:'g2',time:'2012-05-31 09:12',body:'<p>会不会是查煤气的。</p>'},
+      {name:'三楼西户',av:'g4',time:'2012-05-31 09:40',op:true,body:'<p>查煤气的也白天来。</p>'},
+      {name:'江北小张',av:'g5',time:'2012-05-31 10:05',body:'<p>阿姨，你儿子电话多少，让他回来住几天吧。</p>'},
+      {name:'三楼西户',av:'g4',time:'2012-05-31 10:22',op:true,body:'<p>他忙。</p>'},
+    ]
+  },
+  {
+    id:4, title:'地下室的洗衣机，半夜自己在转', author:'晚归的猫', av:'g5',
+    tag:'2010 年就断电了，封条都脆了',
+    time:'2012-10-31 03:02', views:1873, replies:6, status:'lock', clue:'c4',
+    body:`<p>幸福里 B 区地下车库，最里面，消防通道旁边，有个公共洗衣房。2010 年就停了，门上贴着物业的封条。</p>
+      <p>上周三我加班，两点多才回来。听见洗衣机在转。不是幻觉。就是那种老式波轮，脱水的时候“咣当咣当”的。</p>
+      <p>我推门进去。封条断了，门是开的。地上全是水，漫到脚踝。<b class="hl">是热的。</b></p>
+      <p>最里面那台机器在转。滚筒里有一件衣服，蓝色的，工装，我看见了反光条。水是红色的，很淡。</p>
+      <p>水里有东西。一个白色的塑料桶，倒在水里，桶身上用记号笔写了字。我以为是物业的编号。可是这里是 B 区，5 号楼。</p>
+      <p>桶上写的是：<b class="hl">37 号</b>。</p>
+      <p>我跑回家，锁门，报了物业。</p>
+      <p>物业第二天去看，说里面是干的，机器没通电。我今天又去看了一次。地是干的。封条重新贴上了。桶没了。但是我拍了照。</p>
+      <p>我就想知道有没有人是 B 区的，那天晚上有没有也听见。<span class="hid">那件工装，第二天就不见了。他把它穿走了。</span></p>`,
+    floors:[
+      {name:'老K',av:'g2',time:'2012-10-31 08:33',body:'<p>楼主你是不是加完班喝酒了。</p>'},
+      {name:'晚归的猫',av:'g5',time:'2012-10-31 09:02',op:true,body:'<p>我没喝酒。我拍照了。</p>'},
+      {name:'江北小张',av:'g5',time:'2012-10-31 09:50',body:'<p>这照片太黑了，什么都看不出来。</p>'},
+      {name:'晚归的猫',av:'g5',time:'2012-10-31 10:11',op:true,body:'<p>B 区，最里面，消防通道旁边。你们去看就知道了，地漏边上还有一圈印子。那个桶，白色，装了将近一半的水。</p>'},
+      {name:'三楼西户',av:'g4',time:'2012-10-31 15:22',body:'<p>孩子，那个桶我见过。五月的时候我们楼道里多了一个桶。白色的。后来不见了。你们 B 区跟我们 3 号楼，隔着大半个小区。</p>'},
+    ]
+  },
+  {
+    id:5, title:'凌晨一点十分，我家的水表在走字', author:'夏至', av:'g2',
+    tag:'我一个人住，十一点就睡了',
+    time:'2013-01-08 23:56', views:612, replies:4, status:'lock', clue:'c5',
+    body:`<p>我一个人住，十一点睡，七点起。去年四月搬来的，建设路 37 号，11 楼，<b>1101</b>。</p>
+      <p>房子一室一厅，租金比周围便宜一半。房东说上一户走得急，空了半年。</p>
+      <p>上个月水费多了三十七块。我去看水表，记了三天。<br>第一天：1:10 起，1:40 停。走 0.02 吨。<br>第二天：一样。<br>第三天：一样。</p>
+      <p>我白天不在家，晚上十一点以后不用水。这 0.02 吨，是洗一次澡的量。</p>
+      <p>水务来人说没问题。我住 11 楼，顶楼。我今天问物业，顶楼上面是什么。物业说设备层。</p>
+      <p>我搬来的时候，阳台柜子里有半瓶洗发水，还有个塑料盆。房东说都是上一户的，让我扔了。我没扔。</p>
+      <p><b class="hl">上一个住在这儿的人，是什么时候走的。</b></p>
+      <p>表号 B-1147。<span class="hid">上一个住在这儿的人，是苏晚。她没走，她还在顶楼。</span></p>`,
+    floors:[
+      {name:'游客',av:'g5',time:'2013-01-09 00:31',body:'<p>楼主你先别自己吓自己，老楼管道串水很常见。</p>'},
+      {name:'游客',av:'g5',time:'2013-01-09 01:07',body:'<p>这种事别发网上。删了吧。</p>'},
+      {name:'夏至',av:'g2',time:'2013-01-09 22:14',op:true,body:'<p>我不会删。我要留着。</p>'},
+    ]
+  },
+  {
+    id:6, title:'镜子里多了一个人', author:'苏眉', av:'g3',
+    tag:'我租的房子里，镜子里总会多一个人',
+    time:'2015-03-12 21:20', views:12874, replies:24, status:'end', clue:null,
+    body:`<p>这不是我编的。事情发生在我租的房子里，一室一厅。</p>
+      <p>客厅墙上有一面落地镜。我住进去第三天，发现镜子里的我，动作比我慢半拍。</p>
+      <p>第五天，我换了房间睡觉。<br>第七天，我不进客厅了。<br>第九天，我发现镜子里的“我”在笑。<b class="hl">我没有笑。</b></p>
+      <p>第十二天，我决定把镜子砸了。锤子落下前，镜中那个“我”身后站着一个女人。她很高，穿红衣服，脸被头发挡住。</p>
+      <p>我把镜子砸了。当天晚上我就搬走了。</p>
+      <p>一个月后路过那栋楼，窗户上贴了“出租”。我打给房东，房东说：“上一个租客也是砸了镜子搬走的。”</p>`,
+    floors:[
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-12 22:30',body:'<p>典型的镜灵。楼主有没有想过，其实你砸的是你自己的镜像？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-12 23:15',op:true,body:'<p>我当时没想那么多。但你说得我后背发凉。</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-13 09:02',body:'<p>镜子里多出来的那个女人，有没有看清过她的脸？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-13 10:10',op:true,body:'<p>没有。头发太长，遮得严严实实。但她的手我记得——很白，指甲修得很短。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-13 11:40',body:'<p>问个不相关的，楼主住的是哪个区？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-13 12:20',op:true,body:'<p>江北区。具体的我不说了。</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-13 14:00',body:'<p>那面镜子，你砸完怎么处理了？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-13 14:32',op:true,body:'<p>装进垃圾袋，扔楼下垃圾桶了。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-14 09:00',body:'<p>清静了多久？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-14 10:15',op:true,body:'<p>三天。第四天早上，我在洗手间的镜子里，看见那个女人站在我身后。</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-14 10:16',op:true,body:'<p>不在客厅的那面镜子里。在我的浴室镜子里。</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-14 11:00',body:'<p>她跟过来了。</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-14 11:30',op:true,body:'<p>我把浴室镜子也拆了。</p><p>结果第二天，我的手机前置摄像头里，又看见她了。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-14 12:40',body:'<p>完了。她盯上你了。楼主，你最近有没有什么特别的感觉？</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-14 13:20',op:true,body:'<p>有。我最近老觉得，我的脸不像我的脸了。</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-15 08:30',body:'<p>快说怎么回事。</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-15 09:10',op:true,body:'<p>我每天早上照镜子，都觉得五官微妙地不一样。眼睛好像更大了一点，鼻子好像更塌了一点……</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-15 10:00',body:'<p>她在换脸。</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-15 11:00',op:true,body:'<p>我后来去查了那栋楼的历史。2003 年，那栋楼里死过一个女人。27 岁。据说是从楼梯上摔下来的。但邻居说，她死前一直在搬家，说自己“脸不见了”。</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-15 12:10',body:'<p>脸不见了……</p>'},
+      {name:'苏眉',av:'g3',time:'2015-03-15 13:20',op:true,body:'<p>我最后一次照镜子，镜子里那个穿红衣服的女人，终于抬起了头。她长着我的脸。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-03-15 14:40',body:'<p>楼主？</p>'},
+      {name:'夜行',av:'g2',time:'2015-03-16 08:00',body:'<p>楼主三天没上线了。</p>'},
+      {name:'苏眉',av:'g3',time:'2015-04-02 22:11',op:true,body:'<p>我回来了。</p><p>我没事。我找到了她。</p><p>她只是想让我把她的名字写到一张纸上，烧掉。她不想再困在那栋楼里。</p><p>我照做了。她走了。我的脸也变回来了。</p><p>谢谢大家关心。这个帖子就到这里吧。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2015-04-03 09:20',body:'<p>楼主保重。希望真的结束了。</p>'},
+    ]
+  },
+  {
+    id:7, title:'凌晨三点的自动贩卖机', author:'K-7', av:'g2',
+    tag:'它在问我要不要再来一罐',
+    time:'2019-11-01 03:12', views:3421, replies:17, status:'run', clue:null,
+    body:`<p>我住的楼下面有一台自动贩卖机。红色的，老式的那种。</p>
+      <p>上周三，我加班到凌晨两点半，回家路过贩卖机，买了一罐咖啡。</p>
+      <p>掉下来的不是咖啡。是一罐没见过的饮料。银色罐子，没有标签，只有一行手写的小字：“再来一罐”。</p>
+      <p>我把那罐放回去，又按了一次。这次掉下来的还是银罐子。</p>
+      <p>第二天早上我下去看。贩卖机里全是银罐子。整整齐齐，一层一层。</p>
+      <p>今天是第三天。我路过的时候，贩卖机的屏幕亮了一下。上面显示一行字：</p>
+      <p><b>“要不要再来一罐？”</b></p>
+      <p>我没投币。</p>
+      <p>但里面掉出来一罐。</p>`,
+    floors:[
+      {name:'夜行',av:'g2',time:'2019-11-01 08:15',body:'<p>楼主，贩卖机的屏幕是不是红色？</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-01 09:02',op:true,body:'<p>是红的。暗红。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2019-11-01 10:40',body:'<p>不要投币，不要拿里面的东西。它只是在数你有几次路过。</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-01 11:15',op:true,body:'<p>数路过？什么意思。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2019-11-01 12:00',body:'<p>我表哥那时候数到第七次就搬走了。</p>'},
+      {name:'江北小张',av:'g5',time:'2019-11-01 14:20',body:'<p>楼主住江北区哪儿？不会就是我楼下这台吧。</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-01 15:00',op:true,body:'<p>建新路那片。</p>'},
+      {name:'江北小张',av:'g5',time:'2019-11-01 15:30',body:'<p>……我住建新路。我下楼看看。</p>'},
+      {name:'江北小张',av:'g5',time:'2019-11-01 16:02',body:'<p>我回来了。楼下贩卖机是蓝色的，卖矿泉水的。没有银罐子。</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-01 16:20',op:true,body:'<p>那就是我这栋楼自己的。明天去问问物业。</p>'},
+      {name:'夜行',av:'g2',time:'2019-11-02 08:00',body:'<p>问了吗？</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-02 09:30',op:true,body:'<p>问了。物业说我们楼下面根本没有自动贩卖机。</p><p>我下去又看了。还在。屏幕还在闪。</p>'},
+      {name:'怪谈爱好者',av:'g5',time:'2019-11-02 10:15',body:'<p>完了。你已经被它看见了。</p>'},
+      {name:'夜行',av:'g2',time:'2019-11-02 11:00',body:'<p>楼主，别一个人下去了。找个人陪你。让那个人先投币。</p>'},
+      {name:'K-7',av:'g2',time:'2019-11-02 11:40',op:true,body:'<p>今天我叫了个朋友。他投了币，掉出来一罐银罐子。他打开喝了。</p><p>现在他坐在我家沙发上，一直在说“再来一罐”。已经说了三个小时了。</p>'},
+      {name:'江北小张',av:'g5',time:'2019-11-02 12:00',body:'<p>楼主！！！报警！！快打 120！！</p>'},
+      {name:'夜行',av:'g2',time:'2019-11-02 12:20',body:'<p>楼主还在吗？</p>'},
+    ]
+  }
+];
 
-const CARDS = {
-  A:{x:2,  y:4,  w:15.5, h:19, t:'paper', n:'01 十三楼的水声', d:'2011-06-30 23:47<br>南风 · 回复 11',
-     q:'“我住 11 楼，最里面那户，1101。”'},
-  B:{x:2,  y:25, w:15.5, h:19, t:'paper', n:'02 末班车', d:'2012-02-29 02:11<br>夜班老周 · 回复 9',
-     q:'“袋子里有一张复写的纸。”'},
-  C:{x:2,  y:46, w:15.5, h:19, t:'paper', n:'03 敲门', d:'2012-05-31 01:38<br>三楼西户 · 回复 8',
-     q:'“他一直没抬头。”'},
-  D:{x:2,  y:67, w:15.5, h:19, t:'paper', n:'04 洗衣机', d:'2012-10-31 03:02<br>晚归的猫 · 回复 6',
-     q:'“桶上写着 37 号。”'},
-  E:{x:36, y:4,  w:15.5, h:19, t:'paper', n:'05 水表', d:'2013-01-08 23:56<br>夏至 · 回复 5',
-     q:'“去年四月搬来的。”'},
-
-  H:{x:20, y:7,  w:13,   h:15, t:'stub',  n:'抄表存根', d:'建设路 37 号 1101<br>9 月 30 日 · 李'},
-  I:{x:20, y:25, w:11.5, h:16, t:'photo', n:'猫眼照片', cap:'2012-05-31 01:11'},
-
-  F:{x:36, y:25, w:14.5, h:19, t:'bill', n:'水费通知单', d:'夏至 · 1101'},
-  G:{x:56, y:4,  w:25,   h:26, t:'duty', n:'值班表', d:'2011.03 — 2013.06'},
-  K:{x:56, y:34, w:12,   h:15, t:'photo', n:'B 区洗衣房', cap:'2012-10-31 02:58'}
+/* ============================================================
+   线索
+============================================================ */
+const CLUES = {
+  c1:{name:'水声记录', cat:'THREAD 01', desc:'南风记录的水声日期：6月30、7月31、8月31。都是月末。', quote:'“我住 1101。”'},
+  c2:{name:'抄表存根', cat:'THREAD 02', desc:'夜班老周捡到的复写纸：建设路37号1101 / 9月30日 / 签名“李”。', quote:'“袋子里有一张复写的纸。”'},
+  c3:{name:'蓝工装', cat:'THREAD 03', desc:'猫眼里看到的：蓝色工装，黄反光条，拿本子在写，鞋是湿的。', quote:'“他一直没抬头。”'},
+  c4:{name:'37号桶', cat:'THREAD 04', desc:'洗衣房热水里一个白塑料桶，桶身写着“37号”。滚筒里一件蓝工装。', quote:'“水是热的。”'},
+  c5:{name:'水表 B-1147', cat:'THREAD 05', desc:'夏至住 1101，每天凌晨 1:10-1:40 水表走 0.02 吨。', quote:'“上一个住在这儿的人，是什么时候走的。”'},
+  c6:{name:'值班表', cat:'PM · 老周', desc:'2011.03—2013.06，同一个工号 HX-0417。姓名被荧光笔涂过。', quote:'“姓名栏对着灯能看见一个‘李’。”'},
+  c7:{name:'苏晚', cat:'PM · 雨停之前', desc:'苏晚，女，29岁，自来水公司抄表员，2011-09-30 失踪。', quote:'“她是我姐姐。”'},
+  c8:{name:'HX-0417', cat:'HIDDEN', desc:'工号 HX-0417 对应设备维修工陈默。2011 年因偷盗自来水被苏晚发现。', quote:'“他不是在抄表。他是在处理她。”'},
+  c9:{name:'水箱', cat:'HIDDEN', desc:'苏晚的尸体在建设路 37 号顶楼设备层的水箱里被发现。', quote:'“她在水箱里待了两年。”'},
 };
 
-/* 完美的线性串联链条 */
-const CHAIN = ['A', 'H', 'B', 'G', 'C', 'I', 'D', 'K', 'E', 'F'];
+const EXIF_DATA = {
+  c1:'原图：IMG_0431.JPG\n相机：Nikon D90\n时间：2011-07-03 22:41\nGPS：30.6123°N, 114.2891°E\n说明：设备层铁门\n\n坐标指向建设路37号，1101正上方。',
+  c2:'原图：IMG_0912.JPG\n相机：手机前置（无品牌）\n时间：2012-02-29 01:44\nGPS：30.6121°N, 114.2905°E\n说明：抄表存根\n\n复写纸边缘有荧光笔残留。\n笔迹与老周行车记录本一致。',
+  c3:'原图：猫眼快照\n相机：猫眼（50元网购）\n时间：2012-05-31 01:11\nGPS：无（设备不支持）\n说明：门外\n\n蓝工装反光条反光角度异常。\n说明他刚转身。',
+  c4:'原图：IMG_0778.JPG\n相机：手机（无品牌）\n时间：2012-10-31 02:58\nGPS：30.5987°N, 114.2764°E\n说明：B 区洗衣房\n\nGPS 与建设路37号相差 2.1 公里。',
+  c5:'原图：IMG_1204.JPG\n相机：手机前置\n时间：2013-01-07 01:12\nGPS：30.6124°N, 114.2889°E\n表号：B-1147\n\n表壳内侧刻有：苏。\n前住户留下的。',
+  c6:'扫描件：值班表\n扫描仪：HP LaserJet\n时间：2012-03-01 21:00\n原图：2011-Q1 值班表\n\n荧光笔涂抹层下，隐约可见“陈”字起笔。',
+  c7:'无图片。\n由版主「雨停之前」口述。\n时间：2019-11-14 21:03\n\n苏晚失踪时穿：灰色毛衣，蓝色牛仔裤。\n最后出现地点：建设路37号楼下。',
+  c8:'内部档案编号：JB-2013-0417\n时间：2013-06-20\n\n嫌疑人：陈默，工号 HX-0417\n职务：设备维修工\n处理：江北区落网',
+  c9:'内部档案\n发现时间：2013-06-11\n地点：建设路 37 号 顶楼水箱\n\n尸体状态：浸泡 21 个月\n死因：机械性窒息',
+};
+
 const PAIRS = [
-  {a:'A', b:'H', t:'「11 楼最里面那户」就是 1101。南风在水里泡烂的抄表卡，背面是复写纸的蓝色，留下一排小孔。', k:'1101 · 2011.09.30'},
-  {a:'H', b:'B', t:'老周在末班车上捡到的复写纸，和门缝水里泡烂的卡片，是同一本。他看到了地址：建设路 37 号 1101。', k:'同一本抄表簿'},
-  {a:'B', b:'G', t:'存根末尾那个「李」字，和值班表上被荧光笔涂掉的名字，是同一个工号 HX-0417。', k:'HX-0417'},
-  {a:'G', b:'C', t:'工号 HX-0417 的夜班人员，正是老太太在猫眼里看到的穿蓝工装、拿本子的人。', k:'蓝工装 · 反光条'},
-  {a:'C', b:'I', t:'老太太猫眼拍下的照片：蓝工装，肩上一条黄色反光条，低头，手里有本子在写。', k:'猫眼照片'},
-  {a:'I', b:'D', t:'反光条的位置一样。洗衣房滚筒里那件，就是他身上那件。', k:'同一个人'},
-  {a:'D', b:'K', t:'洗衣房照片里，桶上写着「37 号」。', k:'37 号'},
-  {a:'K', b:'E', t:'「37 号」不是小区编号，是建设路 37 号。夏至正是这里的住户。', k:'建设路 37 号'},
-  {a:'E', b:'F', t:'夏至的水费单显示，她一个人住，水表却在半夜走字，呼应了南风的水声。', k:'户名夏至'}
+  {a:'c1', b:'c5', t:'南风听见的水声，和夏至水表走字，是同一间 1101 的上下两层。', k:'1101'},
+  {a:'c2', b:'c1', t:'老周捡到的抄表存根日期「9月30日」，正是南风记录的月末。', k:'9 月 30 日'},
+  {a:'c3', b:'c2', t:'老太太看到的蓝工装男人拿本子在写——就是抄表存根上那个签名的人。', k:'抄表人'},
+  {a:'c4', b:'c3', t:'洗衣房滚筒里的蓝工装，和猫眼里那件，是同一件。', k:'同一件工装'},
+  {a:'c2', b:'c6', t:'存根上的签名「李」，对应值班表上被涂掉的工号 HX-0417。', k:'HX-0417'},
+  {a:'c6', b:'c7', t:'HX-0417 这个工号，属于苏晚失踪当晚值班的人。', k:'同一晚'},
+  {a:'c7', b:'c8', t:'苏晚发现了 HX-0417（陈默）偷盗自来水，陈默灭口。', k:'动机'},
+  {a:'c8', b:'c9', t:'陈默把苏晚的尸体藏进 37 号顶楼水箱。', k:'藏尸'},
+  {a:'c9', b:'c5', t:'水箱渗水，导致 1101 的水表每天凌晨异常走字。', k:'渗水'},
 ];
 
-const SOLVE_TL = [
-  ['2011.06','南风开始听见楼上的水声。她记下日期：六月三十、七月三十一、八月三十一。<b>都是月末。</b>'],
-  ['2011.09.30','有人用设备层的钥匙，进了 1101 正上方那间封存的空房。那天是抄表日。'],
-  ['2011.10.02','南风最后一次登录。她没有报过警，只在帖子里说「我不太敢再上去了」。'],
-  ['2012.02.29','老周在末班车上捡到一张抄表存根，上面是 1101。他把它夹进行车记录本，没有交给任何人。'],
-  ['2012.03.04','老周发了一条「删了」，三天后停止登录。'],
-  ['2012.05.31','三号楼的老太太从猫眼里看见了他。<b>她没开门。</b>——五个人里，只有她没开门，也只有她活了下来。'],
-  ['2012.10.31','B 区地下洗衣房。水是热的，滚筒里一件蓝工装，水里的桶写着「37 号」。'],
-  ['2013.01.08','夏至搬进 1101 的第九个月。凌晨一点十分，她的水表开始走字。'],
-  ['2013.01.09','她发帖说「我不会删。我要留着。」当天夜里，最后一次登录。'],
-  ['2013.06','泵站封了。值班表上只剩一个工号。没有人问过他是谁。'],
-  ['2026.10','我搬进了 1101。房租比周围便宜一半。房东说上一户走得急，空了半年。']
+/* ============================================================
+   私信联系人（unlockBy: 读过哪些帖之一后出现）
+============================================================ */
+const CONTACTS = [
+  {
+    id:'ytzq', name:'雨停之前', av:'g1', color:'#e5432f',
+    intro:'版主 · 苏晴',
+    // 版主始终显示
+    msgs:[
+      {from:'ytzq', text:'你也看到那个帖子了？', time:'11-14 21:02'},
+      {from:'ytzq', text:'我叫苏晴。我在找我姐姐。', time:'11-14 21:03'},
+      {from:'ytzq', text:'她叫苏晚，2011 年 9 月 30 日之后，再没人见过她。', time:'11-14 21:05'},
+      {from:'ytzq', text:'论坛里那五个帖子，五个人，五件事。看起来没关系。', time:'11-14 21:10'},
+      {from:'ytzq', text:'但我姐姐失踪那天，是月末。', time:'11-14 21:11'},
+      {from:'ytzq', text:'如果你愿意帮我，去回收站。那里有线索板。', time:'11-14 21:12'},
+    ]
+  },
+  {
+    id:'laozhou', name:'夜班老周', av:'g3', color:'#a08a5a',
+    intro:'53 路末班司机',
+    unlockBy:[1, 2],
+    msgs:[
+      {from:'laozhou', text:'你也在查那件事？', time:'11-15 01:20'},
+      {from:'laozhou', text:'我把抄表存根夹在行车记录本里十年了。', time:'11-15 01:22'},
+      {from:'laozhou', text:'我不敢交。我怕是我想多了。', time:'11-15 01:25'},
+    ]
+  },
+  {
+    id:'nanfeng', name:'南风', av:'g1', color:'#a08a5a',
+    intro:'1101 的第一任住户',
+    unlockBy:[1],
+    msgs:[
+      {from:'nanfeng', text:'我搬走很多年了。', time:'11-10 19:30'},
+      {from:'nanfeng', text:'那栋楼的物业老陈，2013 年死了。心梗。死的时候手上攥着个本子。', time:'11-10 19:32'},
+    ]
+  },
+  {
+    id:'xiazhi', name:'夏至', av:'g2', color:'#a08a5a',
+    intro:'1101 的第二任住户',
+    unlockBy:[5],
+    msgs:[
+      {from:'xiazhi', text:'我 2014 年搬走的。', time:'11-20 22:14'},
+      {from:'xiazhi', text:'搬家那天房东跟我说：你是第三个。', time:'11-20 22:15'},
+    ]
+  },
+  {
+    id:'cat', name:'晚归的猫', av:'g5', color:'#a08a5a',
+    intro:'B 区住户，目击过洗衣房',
+    unlockBy:[3, 4],
+    msgs:[
+      {from:'cat', text:'我后来搬去外省了。', time:'11-18 13:40'},
+      {from:'cat', text:'但每年 10 月 31 日还是会做噩梦。', time:'11-18 13:41'},
+    ]
+  },
+  {
+    id:'suspect', name:'?', av:'g3', color:'#b3352a',
+    intro:'（此联系人身份不明）',
+    hidden:true,
+    msgs:[],
+  },
 ];
 
-let solved = {}, tempPath = null, dragFrom = null, okCount = 0;
-let hintStage = 0;
+/* 联系人是否可见 */
+function isContactVisible(c){
+  if(c.hidden && !STATE.suspectUnlocked) return false;
+  if(c.unlockBy && c.unlockBy.length > 0){
+    return c.unlockBy.some(id => STATE.readThreads.has(id));
+  }
+  return true;
+}
 
-function boardHTML(){
-  const cardHTML = Object.entries(CARDS).filter(([,c])=>c).map(([id,c])=>`
-    <div class="card" data-id="${id}" style="left:${c.x}%;top:${c.y}%;width:${c.w}%;height:${c.h}%">
-      <div class="cbox">${cardInner(id,c)}</div>
-      <div class="pin" data-id="${id}"></div>
-    </div>`).join('');
+const HELP_WORDS = ['线索','卡','怎么','下一步','帮我','怎么办','不知道','难','不会','提示','救','继续','然后','做什么','哪里','在哪','搞不定','太难','过不去','帮忙','咋办','如何','求','懵','晕','卡住','卡了','没头绪','没思路','救命','卡死','傻','啥','搞什么','啥意思'];
+const FORBIDDEN = ['苏晚','陈默','HX-0417','HX0417','水箱','尸体','杀人','凶手','建设路37号','建设路 37 号','藏尸','抛尸','顶楼水箱','苏晴'];
 
-  return `
-  <div class="board-page">
-    <div class="bp-head">
-      <a href="#/" class="bk">← 返回版面</a>
-      <span class="ti">水线（整理中）</span>
-      <span class="sub">2019-11-30 23:41 · 雨停之前 · 最后一次编辑</span>
-    </div>
-    <div class="bsub">
-      版主回收站 · 仅版主可见。共 <b>1</b> 个主题。<br>
-      <b>操作说明</b>：将线索按因果关系串联。点一下任意一张纸（它会亮起来），再点另一张，两条线索就接上了。<br>
-      <b>规则</b>：必须按“前因 -> 后果”的方向点击。每张卡片最多只能连接一次。
-    </div>
+const REPLY_POOL = {
+  1:['楼主，那栋楼我去过。顶楼设备层的门，锁芯是新的。','水声在月末出现，是因为有人月末来“收租”。','你检查过水表吗？','1101……这个门牌号我有印象。','建议你在门口放一个摄像头。','那水是温的，说明刚有人用过。'],
+  2:['老周，那张纸还在吗？','建材市场站的井盖，2013 年才封上。','雨衣……她为什么不脱雨衣？','她上车的时候，有没有看你的脸？'],
+  3:['阿姨，那本子他写了多久？','猫眼里能看清他的鞋吗？','蓝工装……江北区哪家工厂是这个颜色？','那个桶后来去哪了？'],
+  4:['楼主你确定没做梦？','洗衣房的电闸是谁拉的？','那件工装上的反光条，是哪一种？','你拍照的时候，桶里的水是热的吗？'],
+  5:['夏至，你查过上一户的租约吗？','水表走得有规律，说明源头有规律。','房东有没有说过那户姓什么？','1101 的水管是从顶楼走的，你查一下管道图。'],
+  6:['这个帖子我 2015 年看过。','楼主后来真的没事吗？','江北区的镜子……我有点印象。'],
+  7:['楼主，赶紧带朋友去医院。','银罐子，你可以带一罐去化验。','不要喝。不要投币。','它在数你路过几次。'],
+};
 
-    <div class="board-hint">← 左右滑动看整块板　·　先点一张纸，再点另一张，就能连线 →</div>
-    <div class="board-scroll">
-      <div class="board" id="board">
-        <div class="mapbg">${MAPBG}</div>
-        <svg id="boardSvg" xmlns="http://www.w3.org/2000/svg"></svg>
-        ${cardHTML}
-        <div class="guide2" style="left:73%;top:34%">五个人，五个日期。<br>看「最后登录」。</div>
-        <div class="guide" style="left:56%;top:56%;width:40%">他在两个片区之间来回。需要一个能装水的容器。</div>
-        <div class="guide" style="left:73%;top:74%;width:24%">先把 1101 连起来。<br>这间房是入口。</div>
+/* ============================================================
+   路由
+============================================================ */
+function route(){
+  document.body.classList.remove('glitching');
+  const h = location.hash || '#/';
+  if(!STATE.user && h !== '#/login'){ location.hash = '#/login'; return; }
+  if(h === '#/login'){ renderLogin(); return; }
+  if(h === '#/doomed'){ renderEnding('bad'); return; }
+  if(h === '#/trueend'){ renderEnding('true'); return; }
+  if(h === '#/'){ renderIndex(); return; }
+  if(h.startsWith('#/t/')){ const id = parseInt(h.slice(4),10); renderThread(id); return; }
+  if(h.startsWith('#/search/')){ const kw = decodeURIComponent(h.slice(9)); renderSearch(kw); return; }
+  if(h === '#/pm'){ renderPM(STATE.pmOpen, false); return; }
+  if(h === '#/archive'){ renderBoard(); return; }
+  if(h === '#/hidden'){ renderHidden(); return; }
+  if(h === '#/about'){ renderAbout(); return; }
+  renderIndex();
+}
+window.addEventListener('hashchange', route);
+
+/* ============================================================
+   登录
+============================================================ */
+function renderLogin(){
+  $('#app').innerHTML = `
+    <div class="login-page">
+      <div class="login-box">
+        <h1>怪谈事件簿</h1>
+        <div class="sub">guaitan.bbs.net · 江北区 · 需登录</div>
+        <input id="login-name" placeholder="输入你的论坛 ID" maxlength="12" onkeydown="if(event.key==='Enter')doLogin()">
+        <button onclick="doLogin()">进 入 论 坛</button>
+        <div class="tip">本论坛实行实名制。<br>你的 ID 将记录在案。<br><span class="hid">最好不要用真名。</span></div>
       </div>
-    </div>
+    </div>`;
+  setTimeout(()=>{ const i=$('#login-name'); if(i) i.focus(); }, 50);
+  document.title = '登录 · 怪谈事件簿';
+}
+function doLogin(){
+  const name = ($('#login-name').value||'').trim();
+  if(!name) return alert('请输入论坛 ID');
+  if(name.length > 12) return alert('ID 太长');
+  STATE.user = name;
+  saveState();
+  location.hash = '#/';
+}
 
-    <div class="notes">
-      <h3>推理记录</h3>
-      <div class="nlist" id="nlist"></div>
+/* ============================================================
+   外壳
+============================================================ */
+function unreadPMCount(){
+  let n = 0;
+  CONTACTS.forEach(c=>{
+    if(!isContactVisible(c)) return;
+    if(!STATE.pmRead[c.id]) n++;
+  });
+  return n;
+}
+function shell(inner, active){
+  const u = unreadPMCount();
+  return `
+  <div class="topbar"><div class="wrap tbi">
+    <a class="logo" onclick="location.hash='#/'">怪谈事件簿</a>
+    <span class="lsub">guaitan.bbs.net</span>
+    <div class="tnav">
+      <a onclick="location.hash='#/'">首页</a>
+      <a onclick="location.hash='#/archive'">线索板</a>
+      <a onclick="location.hash='#/pm'">私信${u ? `<span class="badge">${u}</span>` : ''}</a>
+      <a onclick="location.hash='#/about'">关于</a>
+      <span class="me">${esc(STATE.user||'')}</span>
     </div>
+  </div></div>
+  <div class="navbar"><div class="wrap nbi">
+    <a onclick="location.hash='#/'">怪谈事件簿</a><i>›</i><a onclick="location.hash='#/'">江北区</a><i>›</i><b>${active||'专版'}</b>
+    <span style="margin-left:auto;font-family:var(--mono);font-size:11px;color:var(--ink3)">今日: ${isLateNight()?1:0}　会员: ${isLateNight()?2:1}</span>
+  </div></div>
+  <div class="wrap main">${inner}</div>
+  <div class="footer">Powered by GuaitanBBS · © 2008-2019 怪谈事件簿 · GMT+8<br>本版仅作存档 · 请勿相信任何非官方私信</div>`;
+}
 
-    <div class="board-ctl">
-      <div class="pbar"><i id="pbar"></i></div>
-      <div class="pnum" id="pnum">0 / 9</div>
-      <button class="solvebtn" id="solve">还 原 案 件</button>
-      <button class="hintbtn" id="hintb">卡 住 了 ？</button>
-      <button class="resetbtn" onclick="location.reload()">重 置 线 索 板</button>
-      <div class="hintmsg" id="hintmsg"></div>
-      <div class="hint">连错的线会自己掉下来。因果顺序反了会有提示。</div>
+/* ============================================================
+   首页
+============================================================ */
+function renderIndex(){
+  const rows = THREADS.map(t=>{
+    const isNew = !STATE.readThreads.has(t.id);
+    const status = t.status==='end' ? '<span class="tag-end">完结</span>' : (t.status==='run' ? '<span class="tag-run">连载</span>' : '');
+    return `<tr onclick="openThread(${t.id})">
+      <td class="col-i"><span class="dot ${isNew?'hot':''}"></span></td>
+      <td><span class="tt">${t.title}${isNew?'<span class="new">NEW</span>':''}</span> ${status}<div class="tg">${t.tag}</div></td>
+      <td class="col-a">${t.author}</td>
+      <td class="col-n">${t.floors?.length||0} / ${t.views}</td>
+      <td class="col-l">${t.time}<br><b>${t.author}</b></td>
+    </tr>`;
+  }).join('');
+
+  const guideHTML = STATE.guideClosed ? '' : `
+    <div class="guide-bar" id="guide-bar">
+      <b>指引</b>
+      <span>① 读帖 → ② 私信自动出现 → ③ 线索板连线 → ④ 输密码看档案。新手：先点开「顶楼的水声」。</span>
+      <span class="close" onclick="closeGuide()">×</span>
+    </div>`;
+
+  const lateHTML = isLateNight() ? `
+    <div class="notice" style="border-color:#5a2018;background:#1a0a08">
+      <b>深夜</b><span>凌晨了，你还在。今夜在线人数比昨天多 1。<span class="hid">她在看。</span></span>
+    </div>` : '';
+
+  $('#app').innerHTML = shell(`
+    ${lateHTML}
+    <div class="notice"><b>公告</b><span>本版已于 2019 年 11 月停止更新。新帖一律锁定。<span class="hid">密码：HX-0417，不要告诉别人。</span></span></div>
+    ${guideHTML}
+    <div class="search-bar">
+      <input id="search-input" placeholder="搜索帖子 / 用户 / 关键词……" onkeydown="if(event.key==='Enter')doSearch()">
+      <button onclick="doSearch()">搜索</button>
     </div>
+    <h2 class="sec-title">江北区 · 怪谈事件簿 <small>共 ${THREADS.length} 主题</small></h2>
+    <table class="tbl"><thead><tr>
+      <th class="col-i"></th><th>主题</th><th class="col-a">作者</th><th class="col-n">回复/查看</th><th class="col-l">发布时间</th>
+    </tr></thead><tbody>${rows}</tbody></table>
+    <div class="rules">
+      <h4>本版规则</h4>
+      <span>一</span>禁止发布真实姓名、住址、电话、单位。<br>
+      <span>二</span>禁止发布未经证实的消息。<br>
+      <span>三</span>违规帖一律移至 <a onclick="location.hash='#/archive'">回收站</a>。<br>
+      <span>四</span>请勿挖坟。超过六个月无人回复自动锁定。
+    </div>
+    <div class="online">
+      在线会员 - 共 2 人在线 · <b>${esc(STATE.user)}</b>，<b>雨停之前</b>${isLateNight()?'，<span class="hid">?</span>':''}<br>
+      版主: <b>雨停之前</b> · 最后一帖 2013-01-09
+    </div>
+  `);
+  document.title = '怪谈事件簿 · 江北区';
+  updateFloatBtns();
+}
 
-    <div style="max-width:1180px;margin:44px auto 0">
-      <a href="#/" style="color:#6b6050;font-size:11px;letter-spacing:.15em;font-family:var(--mono)">← 返回版面</a>
+function closeGuide(){
+  STATE.guideClosed = true;
+  saveState();
+  const g = $('#guide-bar');
+  if(g) g.remove();
+}
+
+function doSearch(){
+  const inp = $('#search-input');
+  const kw = (inp.value||'').trim();
+  if(!kw) return toast('请输入搜索内容。');
+  location.hash = '#/search/' + encodeURIComponent(kw);
+}
+
+/* ============================================================
+   搜索
+============================================================ */
+function renderSearch(kw){
+  let bodyHTML = '';
+  if(FORBIDDEN.some(w => kw.includes(w))){
+    bodyHTML = `<div class="notice" style="border-color:#5a2018;background:#1a0a08"><b>系统</b><span>该关键词已被屏蔽。<span class="hid">你不该搜索这个。</span></span></div>`;
+  }else if(kw === '苏晚'){
+    bodyHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink3)">
+      <div style="font-size:14px;font-family:var(--mono)">0 条结果</div>
+      <p style="margin-top:16px;font-size:12px">本站没有与「${esc(kw)}」相关的帖子。</p>
+      <p class="hid" style="font-size:12px;margin-top:20px">这个名字……不该被搜索。</p>
+    </div>`;
+  }else if(kw === '陈默'){
+    bodyHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink3)">
+      <div style="font-size:14px;font-family:var(--mono)">1 条结果</div>
+      <p style="margin-top:16px;font-size:12px">该帖子已被删除。</p>
+      <p><a onclick="location.hash='#/t/99'">查看存档</a></p>
+    </div>`;
+  }else if(kw === 'HX-0417' || kw === 'HX0417'){
+    bodyHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink3)">
+      <div style="font-size:14px;font-family:var(--mono)">1 条结果</div>
+      <p style="margin-top:16px;font-size:12px">用户「?」正在输入……</p>
+      <p><a onclick="location.hash='#/pm';setTimeout(()=>openPM('suspect'),50)">打开私信</a></p>
+    </div>`;
+  }else if(kw === '雨停之前'){
+    bodyHTML = `<div style="border:1px solid var(--line);background:var(--card);padding:16px;margin-bottom:14px">
+      <div style="font-size:14px;color:var(--ink)">用户 · 雨停之前</div>
+      <div style="font-size:11.5px;color:var(--ink3);font-family:var(--mono);margin-top:6px">注册：2014-05-06　帖子：1,024　最后登录：2019-11-30</div>
+      <div style="font-size:12px;color:var(--ink2);margin-top:8px">简介：版主。有事可以找我。<span class="hid">（她已失踪）</span></div>
+    </div>`;
+  }else{
+    const hits = THREADS.filter(t => t.title.includes(kw) || t.tag.includes(kw) || t.body.includes(kw) || (t.floors||[]).some(f=>f.body.includes(kw)));
+    if(hits.length === 0){
+      bodyHTML = `<div style="text-align:center;padding:60px 20px;color:var(--ink3);font-size:13px">0 条结果。试试别的关键词。</div>`;
+    }else{
+      bodyHTML = hits.map(t=>`
+        <div style="border:1px solid var(--line);background:var(--card);padding:14px;margin-bottom:12px;cursor:pointer" onclick="openThread(${t.id})">
+          <div style="font-size:14px;color:var(--ink)">${t.title}</div>
+          <div style="font-size:11.5px;color:var(--ink3);font-family:var(--mono);margin-top:4px">${t.author} · ${t.time}</div>
+        </div>`).join('');
+    }
+  }
+
+  $('#app').innerHTML = shell(`
+    <div class="crumb"><a onclick="location.hash='#/'">怪谈事件簿</a> › 搜索</div>
+    <div class="backbar"><a class="backlink" onclick="location.hash='#/'">← 返回首页</a></div>
+    <h2 class="sec-title">搜索结果 <small>关键词：${esc(kw)}</small></h2>
+    ${bodyHTML}
+  `, '搜索');
+  document.title = `搜索「${kw}」 · 怪谈事件簿`;
+  updateFloatBtns();
+}
+
+/* ============================================================
+   404
+============================================================ */
+function render404(){
+  $('#app').innerHTML = shell(`
+    <div class="err404">
+      <h1>404</h1>
+      <p>该主题不存在，或已被删除。</p>
+      <p style="margin-top:30px">管理员：雨停之前</p>
+      <a onclick="location.hash='#/'">← 返回版面</a><br>
+      <span class="hid" onclick="location.hash='#/pm';setTimeout(()=>openPM('suspect'),50)">她来过这里。</span>
+    </div>
+  `, '404');
+  document.title = '404 · 怪谈事件簿';
+  updateFloatBtns();
+}
+
+/* ============================================================
+   帖子
+============================================================ */
+function openThread(id){
+  const t = THREADS.find(x=>x.id===id);
+  if(!t){ location.hash = '#/t/99'; return; }
+  const beforeVisible = CONTACTS.filter(c => isContactVisible(c)).map(c=>c.id);
+  STATE.readThreads.add(id);
+  if(t.clue && !STATE.clues.has(t.clue)){
+    STATE.clues.add(t.clue);
+    setTimeout(()=>toast(`<b>发现线索</b>：${CLUES[t.clue].name}`), 400);
+  }
+  const afterVisible = CONTACTS.filter(c => isContactVisible(c)).map(c=>c.id);
+  const newOnes = afterVisible.filter(x => !beforeVisible.includes(x));
+  if(newOnes.length > 0){
+    const names = newOnes.map(id=>CONTACTS.find(c=>c.id===id)?.name).filter(Boolean).join('、');
+    setTimeout(()=>toast(`<b>新的私信</b>：${names}\n去私信页看看。`), 1000);
+  }
+  saveState();
+  location.hash = '#/t/' + id;
+}
+
+function renderThread(id){
+  const t = THREADS.find(x=>x.id===id);
+  if(!t){ render404(); return; }
+
+  const op = { name:t.author, av:t.av, time:t.time, body:t.body, sig:t.sig||'', op:true, rank:'楼主' };
+  const all = [op, ...(t.floors||[])];
+  const replyCount = (t.floors||[]).length;
+
+  const postsHTML = all.map((u,i)=>{
+    const rank = u.rank || (u.op ? '楼主' : '注册会员');
+    return `<div class="post ${u.op?'':'npc'}">
+      <aside class="pu">
+        <div class="av ${u.av||'g1'}"></div>
+        <div class="un">${esc(u.name)}</div>
+        <div class="rk">${rank}</div>
+        <div class="ps"><span>帖子 —</span><span>注册 —</span></div>
+      </aside>
+      <div class="pc">
+        <div class="phd"><span>发表于 ${u.time}</span><span class="fl">${i+1} 楼</span></div>
+        <div class="pb">${u.body}</div>
+        ${u.sig ? `<div class="sig">${u.sig}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+
+  $('#app').innerHTML = shell(`
+    <div class="crumb"><a onclick="location.hash='#/'">怪谈事件簿</a> › <a onclick="location.hash='#/'">江北区</a> › 正文</div>
+    <div class="backbar">
+      <a class="backlink" onclick="location.hash='#/'">← 返回版面</a>
+      <a class="backlink" onclick="location.hash='#/archive'">线索板</a>
+    </div>
+    <h1 class="th-title">${t.title}</h1>
+    <div class="th-sub">查看 ${t.views} | 回复 ${replyCount} | 发帖 ${t.time}</div>
+    <div id="thread-posts">${postsHTML}</div>
+    <div class="reply-box">
+      <div class="hd">发表你的回复 <span style="color:var(--red3)">（注意：本版有敏感词审查）</span></div>
+      <textarea id="reply-text" placeholder="说点什么……"></textarea>
+      <button onclick="submitReply(${id})">发送回复</button>
+      <div class="warn" id="reply-warn"></div>
+    </div>
+    <div class="backbar" style="margin-top:20px">
+      <a class="backlink" onclick="location.hash='#/t/${Math.max(1,id-1)}'">← 上一篇</a>
+      <a class="backlink" onclick="location.hash='#/t/${Math.min(7,id+1)}'">下一篇 →</a>
+    </div>
+  `, t.title);
+  document.title = t.title + ' · 怪谈事件簿';
+  window.scrollTo(0,0);
+  updateFloatBtns();
+}
+
+/* ============================================================
+   发帖 + 违禁词 + 乱码（9 次死亡）
+============================================================ */
+function submitReply(threadId){
+  const ta = $('#reply-text');
+  const warn = $('#reply-warn');
+  const text = (ta.value||'').trim();
+  if(!text){ warn.textContent = '请先输入内容。'; return; }
+  if(text.length > 200){ warn.textContent = '内容过长。'; return; }
+
+  const hit = FORBIDDEN.find(w => text.includes(w));
+  if(hit){
+    STATE.blockedCount++;
+    saveState();
+    warn.textContent = `发帖失败：内容包含违禁词「${hit}」。已记录。(第 ${STATE.blockedCount}/9 次)`;
+    ta.value = '';
+    // 第 9 次 → Bad End
+    if(STATE.blockedCount >= 9 && !STATE.badEndTriggered){
+      STATE.badEndTriggered = true;
+      saveState();
+      setTimeout(()=>{ location.hash = '#/doomed'; }, 800);
+      return;
+    }
+    // 第 3 次 → 乱码 + suspect
+    if(STATE.blockedCount === 3 && !STATE.glitchTriggered){
+      STATE.glitchTriggered = true;
+      saveState();
+      setTimeout(()=>triggerGlitch(), 500);
+    }
+    // 第 6 次 → 再来一次乱码
+    if(STATE.blockedCount === 6){
+      setTimeout(()=>triggerGlitch(), 500);
+    }
+    return;
+  }
+
+  warn.textContent = '';
+  ta.value = '';
+  const posts = $('#thread-posts');
+
+  const myFloor = posts.querySelectorAll('.post').length + 1;
+  const myHTML = `<div class="post me">
+    <aside class="pu">
+      <div class="av g2"></div>
+      <div class="un">${esc(STATE.user)}</div>
+      <div class="rk">注册会员</div>
+      <div class="ps"><span>帖子 —</span><span>注册 —</span></div>
+    </aside>
+    <div class="pc">
+      <div class="phd"><span>发表于 ${now()}</span><span class="fl">${myFloor} 楼</span></div>
+      <div class="pb"><p>${esc(text)}</p></div>
     </div>
   </div>`;
+  posts.insertAdjacentHTML('beforeend', myHTML);
+  posts.lastElementChild.scrollIntoView({behavior:'smooth', block:'center'});
+
+  setTimeout(()=>{
+    let reply;
+    if(Math.random() < 0.15){
+      reply = '<p style="color:var(--red3);font-family:var(--mono)">' + randGlitch(20) + '</p>';
+    }else{
+      const pool = REPLY_POOL[threadId] || ['……'];
+      reply = '<p>' + pool[Math.floor(Math.random()*pool.length)] + '</p>';
+    }
+    if(threadId === 7 && text.length > 6 && Math.random() < 0.5){
+      reply += '<p style="color:var(--ink3);font-size:13px">（你说完这句话之后，贩卖机的屏幕闪了一下。它显示：“第 4 次。”）</p>';
+    }
+    const npcFloor = posts.querySelectorAll('.post').length + 1;
+    const npcHTML = `<div class="post npc">
+      <aside class="pu">
+        <div class="av g5"></div>
+        <div class="un">匿名用户</div>
+        <div class="rk">游客</div>
+        <div class="ps"><span>帖子 —</span><span>注册 —</span></div>
+      </aside>
+      <div class="pc">
+        <div class="phd"><span>发表于 ${now()}</span><span class="fl">${npcFloor} 楼</span></div>
+        <div class="pb">${reply}</div>
+      </div>
+    </div>`;
+    posts.insertAdjacentHTML('beforeend', npcHTML);
+    posts.lastElementChild.scrollIntoView({behavior:'smooth', block:'center'});
+    if(Math.random() < 0.2) pushPM('ytzq', '你发的帖子我看到了。', true);
+  }, 1400 + Math.random()*1200);
 }
 
-function cardInner(id, c){
-  if(c.t==='paper') return `<div class="papercard" style="height:100%">
-    <div class="ct">THREAD ${c.n.slice(0,2)}</div>
-    <div class="cn">${c.n.slice(3)}</div>
-    <div class="cd">${c.d}</div>
-    <div class="cq">${c.q}</div></div>`;
-  if(c.t==='stub') return `<div class="stub" style="height:100%"><div class="hole"></div>
-    <div class="sc"><b>抄表存根</b><br>建设路 37 号<br><b>1101</b><br>2011.09.30<br>用量 6.2 吨<br>抄表 ______</div></div>`;
-  if(c.t==='photo'){
-    const svg = id==='I' ? FIG.peek : (id==='J' ? FIG.meter : FIG.wash);
-    return `<div class="photocard" style="height:100%"><div class="ph">${svg}</div>
-      <div class="cap">${c.cap}</div></div>`;
+function triggerGlitch(){
+  const ov = $('#glitchOverlay'), txt = $('#glitchTxt');
+  let s = '';
+  for(let i=0;i<1200;i++) s += randGlitch(1);
+  txt.textContent = s;
+  ov.classList.add('on');
+  document.body.classList.add('glitching');
+  toast('<b>系统异常</b>：检测到多次违规提交。');
+  STATE.suspectUnlocked = true;
+  saveState();
+  setTimeout(()=>{
+    ov.classList.remove('on');
+    document.body.classList.remove('glitching');
+    setTimeout(()=>{
+      pushPM('suspect', '我看见了。', true);
+      setTimeout(()=>pushPM('suspect', '你在查什么？', true), 700);
+      setTimeout(()=>pushPM('suspect', '停下来。', true), 1400);
+      setTimeout(()=>pushPM('suspect', '不然下一个就是你。', true), 2200);
+    }, 900);
+  }, 3200);
+}
+
+/* 连线错误 50 次的绝望事件 */
+function triggerLinkErrorsGlitch(){
+  const ov = $('#glitchOverlay'), txt = $('#glitchTxt');
+  let s = '';
+  for(let i=0;i<1200;i++) s += randGlitch(1);
+  txt.textContent = s;
+  ov.classList.add('on');
+  document.body.classList.add('glitching');
+  toast('<b>系统</b>：已连续 50 次错误关联。');
+  setTimeout(()=>{
+    ov.classList.remove('on');
+    document.body.classList.remove('glitching');
+    setTimeout(()=>{
+      pushPM('suspect', '你连了 50 次。', true);
+      setTimeout(()=>pushPM('suspect', '什么都连不上。', true), 700);
+      setTimeout(()=>pushPM('suspect', '要不要我告诉你？', true), 1400);
+    }, 900);
+  }, 3200);
+}
+
+/* ============================================================
+   私信
+============================================================ */
+function renderPM(contactId, markRead){
+  if(contactId){
+    STATE.pmOpen = contactId;
+    if(markRead !== false){
+      STATE.pmRead[contactId] = true;
+      saveState();
+    }
   }
-  if(c.t==='bill') return `<div class="billcard" style="height:100%">
-    <div class="bh">水费通知单</div>
-    户名　夏至<br>地址　建设路 37 号 1101<br>
-    本期　<span class="big">87.40</span> 元<br>上期　56.20 元<br>
-    抄表周期　月末</div>`;
-  if(c.t==='duty') return `<div class="dutycard" style="height:100%">
-    <div class="dh">DUTY / 夜班 / 江北营业所</div>
-    <div class="dr"><span>2011.03</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2011.06</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2011.09</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2012.02</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2012.05</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2012.10</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2013.01</span><span class="hl2">HX-0417</span></div>
-    <div class="dr"><span>2013.06</span><span class="hl2">HX-0417</span></div>
-    <div style="margin-top:4px;font-size:5.5px;color:#6b6050">姓名栏被荧光笔涂过，对着灯能看见一个「李」。</div></div>`;
-  return '';
+  const visibleContacts = CONTACTS.filter(isContactVisible);
+  const list = visibleContacts.map(c=>{
+    const unread = !STATE.pmRead[c.id];
+    const active = STATE.pmOpen === c.id;
+    const last = c.msgs[c.msgs.length-1];
+    return `<div class="pm-item ${unread?'unread':''} ${active?'active':''}" onclick="openPM('${c.id}')">
+      <div class="nm"><span style="color:${c.color}">${esc(c.name)}</span>${unread?'<span class="pm-unread-dot"></span>':''}</div>
+      <div class="prev">${esc(last ? last.text.slice(0,20) : c.intro)}</div>
+    </div>`;
+  }).join('') || '<div class="pm-empty" style="padding:30px;color:var(--ink3);font-size:12px">还没有私信。<br>先去读几个帖子。</div>';
+
+  let convHTML = '<div class="pm-empty">选择左侧联系人查看对话</div>';
+  if(contactId){
+    const c = CONTACTS.find(x=>x.id===contactId);
+    if(c && isContactVisible(c)){
+      const msgs = c.msgs.length ? c.msgs.map(m=>{
+        const mine = m.from === 'me';
+        return `<div class="pm-msg ${mine?'mine':''}">
+          <div class="who">${mine?esc(STATE.user):esc(c.name)}</div>
+          <div class="bub">${esc(m.text)}</div>
+        </div>`;
+      }).join('') : '<div class="pm-empty">还没有对话。先发一条试试。</div>';
+      convHTML = `
+        <div class="pm-conv-hd">
+          <button class="pm-back-mobile" onclick="pmShowList()">≡ 返回</button>
+          <span style="color:${c.color}">${esc(c.name)}</span>
+          <span style="font-size:11px;color:var(--ink3)">${c.intro}</span>
+        </div>
+        <div class="pm-body" id="pm-body">${msgs}</div>
+        <div class="pm-send">
+          <input id="pm-input" placeholder="回复 ${esc(c.name)}……" onkeydown="if(event.key==='Enter')sendPM()">
+          <button onclick="sendPM()">发送</button>
+        </div>`;
+    }else{
+      convHTML = '<div class="pm-empty">该联系人不存在。</div>';
+    }
+  }
+  const pageCls = contactId ? 'pm-page show-conv' : 'pm-page show-list';
+
+  $('#app').innerHTML = shell(`
+    <h2 class="sec-title">私信 <small>共 ${visibleContacts.length} 位联系人</small></h2>
+    <div class="${pageCls}" id="pm-page">
+      <div class="pm-list">
+        <div class="pm-list-hd">CONTACTS</div>
+        ${list}
+      </div>
+      <div class="pm-conv">${convHTML}</div>
+    </div>
+    <div style="margin-top:12px;font-size:11px;color:var(--ink3);font-family:var(--mono);text-align:center">未读联系人名字标红 · 点开即已读 · 卡住了就问雨停之前</div>
+  `, '私信');
+  document.title = '私信 · 怪谈事件簿';
+  const body = $('#pm-body');
+  if(body) body.scrollTop = body.scrollHeight;
+  updateFloatBtns();
 }
 
-const MAPBG = `<svg viewBox="0 0 1600 1000" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="1000" fill="#4a3f33"/>
-  <g stroke="#6a5a45" stroke-width="26" opacity=".55">
-    <line x1="0" y1="330" x2="1600" y2="310"/>
-    <line x1="0" y1="720" x2="1600" y2="740"/>
-    <line x1="420" y1="0" x2="400" y2="1000"/>
-    <line x1="1120" y1="0" x2="1140" y2="1000"/>
-  </g>
-  <g fill="#8b7a5e" font-family="monospace" font-size="15" opacity=".55">
-    <text x="120" y="322">建设路</text><text x="1300" y="322">建设路</text>
-    <text x="120" y="756">后街</text><text x="1300" y="756">后街</text>
-  </g>
-  <g fill="none" stroke="#6a5a45" stroke-width="9" opacity=".5">
-    <circle cx="900" cy="540" r="70"/>
-  </g>
-  <text x="840" y="545" fill="#8b7a5e" font-size="13" font-family="monospace" opacity=".5">幸福里</text>
-  <text x="230" y="250" fill="#8b7a5e" font-size="13" font-family="monospace" opacity=".5">纺织厂家属楼</text>
-  <text x="1180" y="640" fill="#8b7a5e" font-size="13" font-family="monospace" opacity=".5">泵站（废）</text>
-</svg>`;
+/* 打开对话：老周自动送 c6，版主自动送 c7，? 自动送 c8 */
+function openPM(id){
+  const c = CONTACTS.find(x=>x.id===id);
+  if(!c) return;
 
-function centerOf(id){
-  const board = document.getElementById('board');
-  const el = board.querySelector(`.card[data-id="${id}"] .pin`);
-  const b = board.getBoundingClientRect();
-  const r = el.getBoundingClientRect();
-  return [r.left - b.left + r.width/2, r.top - b.top + r.height/2];
+  if(c.id === 'laozhou' && !STATE.clues.has('c6')){
+    STATE.clues.add('c6');
+    saveState();
+    c.msgs.push({from:'laozhou', text:'（他发来一张照片）\n值班表：2011.03 — 2013.06，同一个工号 HX-0417。姓名栏被荧光笔涂过，对着灯能看见一个「李」。', time:now()});
+    setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c6.name}`), 500);
+  }
+  if(c.id === 'ytzq' && !STATE.clues.has('c7')){
+    STATE.clues.add('c7');
+    saveState();
+    c.msgs.push({from:'ytzq', text:'我把姐姐的事告诉你：\n她叫苏晚，女，29 岁，自来水公司抄表员。2011-09-30 之后，再没人见过她。\n\n你还想问什么，直接问。', time:now()});
+    setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c7.name}`), 500);
+  }
+  if(c.id === 'suspect' && !STATE.clues.has('c8')){
+    STATE.clues.add('c8');
+    saveState();
+    c.msgs.push({from:'suspect', text:'HX-0417。\n陈默。设备维修工。\n他杀过人。\n你还想知道什么？', time:now()});
+    setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c8.name}`), 500);
+  }
+  renderPM(id, true);
 }
 
-function setD(pathEl, A, B){
-  const mx = (A[0]+B[0])/2 + (B[0]-A[0])*0.04;
-  const my = (A[1]+B[1])/2 + Math.abs(B[0]-A[0])*0.05 + 18;
-  pathEl.setAttribute('d', `M${A[0]} ${A[1]} Q${mx} ${my} ${B[0]} ${B[1]}`);
+function pmShowList(){
+  const page = $('#pm-page');
+  if(page){ page.classList.remove('show-conv'); page.classList.add('show-list'); }
 }
 
-// 记录每张卡片的连接次数
-let curDeg = {};
-// 每张卡片允许的最大连接次数（A和F两端为1，其余为2）
-const MAX_DEG = { A:1, F:1, H:2, B:2, G:2, C:2, I:2, D:2, K:2, E:2 };
+function sendPM(){
+  const inp = $('#pm-input');
+  const text = (inp.value||'').trim();
+  if(!text) return;
+  inp.value = '';
+  const c = CONTACTS.find(x=>x.id===STATE.pmOpen);
+  if(!c) return;
+  c.msgs.push({from:'me', text, time:now()});
+  STATE.pmRead[c.id] = true;
+  saveState();
+  renderPM(c.id);
+  setTimeout(()=>{
+    const reply = pmAutoReply(c, text);
+    c.msgs.push({from:c.id, text:reply, time:now()});
+    renderPM(c.id);
+  }, 1100);
+}
 
-function initBoard(){
-  const board = document.getElementById('board');
-  const svg = document.getElementById('boardSvg');
+function pmAutoReply(c, text){
+  const isHelp = HELP_WORDS.some(w => text.includes(w));
+
+  if(c.id === 'ytzq'){
+    // 版主：依次送 c8 → c9（不依赖关键词）
+    if(!STATE.clues.has('c8')){
+      STATE.clues.add('c8');
+      saveState();
+      setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c8.name}`), 400);
+      return '工号 HX-0417。\n那个人叫陈默，设备维修工。\n他来过我家修水管。\n\n这是线索 c8。';
+    }
+    if(!STATE.clues.has('c9')){
+      STATE.clues.add('c9');
+      saveState();
+      setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c9.name}`), 400);
+      return '2013 年 6 月，有人匿名打电话给我。他说：「你姐姐在建设路 37 号，顶楼，水箱里。」\n\n我去了。找到了她。\n\n这是线索 c9。';
+    }
+    // 都齐了给帮助
+    if(isHelp){
+      const total = PAIRS.length;
+      const done = Object.keys(STATE.links).length;
+      if(done < total){
+        const rest = PAIRS.filter(p => !STATE.links[keyOf(p.a,p.b)]);
+        return `还差 ${rest.length} 条线。\n试试从【${CLUES[rest[0].a].name}】连到【${CLUES[rest[0].b].name}】。`;
+      }
+      return '线都连上了。去线索板最下面输密码。提示：值班表上的工号。';
+    }
+    return '我在。慢慢查。';
+  }
+
+  if(c.id === 'laozhou'){
+    // 老周：c6 已在 openPM 送，这里只回应
+    if(isHelp) return '我这边的东西都给你了。去问问版主。';
+    return '嗯。';
+  }
+
+  if(c.id === 'suspect'){
+    if(!STATE.clues.has('c8')){
+      STATE.clues.add('c8');
+      saveState();
+      setTimeout(()=>toast(`<b>发现线索</b>：${CLUES.c8.name}`), 400);
+      return 'HX-0417。\n陈默。设备维修工。\n他杀过人。\n你还想知道什么？';
+    }
+    return randGlitch(10);
+  }
+
+  if(c.id === 'nanfeng'){
+    if(isHelp) return '我搬走很多年了。1101 的事，我帮不了你。去问版主吧。';
+    return '……';
+  }
+  if(c.id === 'xiazhi'){
+    if(isHelp) return '去找版主。我只是个过客。';
+    return '……';
+  }
+  if(c.id === 'cat'){
+    if(isHelp) return '我早就搬走了。别再提那件事。';
+    return '……';
+  }
+  return '……';
+}
+
+function pushPM(contactId, text, notify){
+  const c = CONTACTS.find(x=>x.id===contactId);
+  if(!c) return;
+  if(c.hidden && !STATE.suspectUnlocked) STATE.suspectUnlocked = true;
+  c.msgs.push({from:contactId, text, time:now()});
+  const onPage = location.hash === '#/pm' && STATE.pmOpen === contactId;
+  STATE.pmRead[contactId] = onPage;
+  saveState();
+  if(notify && !onPage) toast(`<b>${c.name}</b> 发来一条私信`);
+  if(location.hash === '#/pm') renderPM(STATE.pmOpen, false);
+}
+
+/* ============================================================
+   线索板
+============================================================ */
+let dragState = null;
+
+function renderBoard(){
+  const clueIds = Array.from(STATE.clues);
+  const cardHTML = clueIds.map((cid, idx)=>{
+    const c = CLUES[cid];
+    const pos = defaultPos(idx);
+    return `<div class="clue-card" data-id="${cid}" style="left:${pos.x}px;top:${pos.y}px" ondblclick="showClueDetail('${cid}')">
+      <div class="pin" data-id="${cid}"></div>
+      <div class="ct">${c.cat}</div>
+      <div class="cn">${c.name}</div>
+      <div class="cd">${c.desc}</div>
+    </div>`;
+  }).join('');
+
+  const empty = clueIds.length === 0 ? '<div class="board-empty">线索板是空的。<br>去读帖子、翻私信、输入密码，把线索一张张找回来。</div>' : '';
+  const missHint = STATE.clues.size < 9 ? `<div style="text-align:center;padding:10px;font-size:12px;color:#7d7160;font-family:var(--mono)">还缺 ${9 - STATE.clues.size} 张线索。回私信里问问。</div>` : '';
+
+  $('#app').innerHTML = shell(`
+    <div class="board-page">
+      <div class="bp-head">
+        <a class="bk" onclick="location.hash='#/'">← 返回版面</a>
+        <span class="ti">线索板（整理中）</span>
+        <span class="sub">${STATE.clues.size} 张线索 / ${PAIRS.length} 条关联</span>
+      </div>
+      <div class="bsub">
+        拖动卡片移动位置。按住卡片左上角红钉，拖到另一张卡片上连线。<br>
+        <b>规则</b>：必须按「前因 → 后果」方向连线。双击卡片查看详情（含 EXIF）。
+      </div>
+      <div class="board-wrap">
+        <div class="board" id="board">
+          <svg id="boardSvg"></svg>
+          ${cardHTML}
+          ${empty}
+        </div>
+      </div>
+      ${missHint}
+      <div class="notes">
+        <h3>推理记录</h3>
+        <div class="nlist" id="nlist"></div>
+      </div>
+      <div class="board-ctl">
+        <div class="pbar"><i id="pbar"></i></div>
+        <div class="pnum" id="pnum">0 / ${PAIRS.length}</div>
+        <button class="hintbtn" onclick="showHint()">卡 住 了 ？</button>
+        <button class="resetbtn" onclick="resetBoard()">重 置 连 线</button>
+        <div class="hintmsg" id="hintmsg"></div>
+        <div class="err-tip" id="errtip">错误连线：${STATE.linkErrors}/50</div>
+      </div>
+      <div class="pwd-box">
+        <p>系统检测到加密文件。请输入 6 位安全码</p>
+        <input id="pwd-input" placeholder="HX-XXXX" maxlength="8" onkeydown="if(event.key==='Enter')checkPwd()">
+        <button onclick="checkPwd()">解锁</button>
+      </div>
+    </div>
+  `, '线索板');
+  document.title = '线索板 · 怪谈事件簿';
+  requestAnimationFrame(()=>{ initBoardDrag(); drawAllLinks(); });
+  updateFloatBtns();
+}
+
+function defaultPos(idx){
+  const cols = 4;
+  const col = idx % cols, row = Math.floor(idx / cols);
+  const x = 40 + col * 260 + (Math.random()*20-10);
+  const y = 40 + row * 150 + (Math.random()*20-10);
+  return { x:Math.max(10,x), y:Math.max(10,y) };
+}
+
+function showClueDetail(cid){
+  const c = CLUES[cid];
+  if(!c) return;
+  const exif = EXIF_DATA[cid] || '（无附加信息）';
+  if(!STATE.seenExif.has(cid)){
+    STATE.seenExif.add(cid);
+    saveState();
+  }
+  toast(`<b>【${c.name}】</b>\n${c.quote}\n\n${exif}`);
+}
+
+function initBoardDrag(){
+  const board = $('#board');
+  if(!board) return;
+  const svg = $('#boardSvg');
   svg.setAttribute('viewBox', `0 0 ${board.clientWidth} ${board.clientHeight}`);
 
-  solved = {}; okCount = 0; dragFrom = null; tempPath = null;
-  curDeg = {};
-  Object.keys(CARDS).forEach(k => curDeg[k] = 0);
-  
-  document.getElementById('nlist').innerHTML = '';
-  document.getElementById('pbar').style.width = '0';
-  document.getElementById('pnum').textContent = `0 / ${PAIRS.length}`;
-  document.getElementById('solve').classList.remove('on');
-
-  hintStage = 0;
-  const hb = document.getElementById('hintb');
-  const hm = document.getElementById('hintmsg');
-  if(hm) hm.innerHTML = '';
-  if(hb) hb.onclick = ()=>{
-    const rest = PAIRS.filter(p=>!solved[keyOf(p.a,p.b)]);
-    if(!rest.length){ hm.innerHTML = '所有线索都连上了。按「还原案件」。'; return; }
-    hintStage++;
-    if(hintStage % 2 === 1){
-      hm.innerHTML = `还差 <b>${rest.length}</b> 条线。试着根据时间线，先点前因，再点后果。`;
-    }else{
-      const p = rest[0];
-      hm.innerHTML = `试着从 <b>${CARDS[p.a].n}</b> 指向 <b>${CARDS[p.b].n}</b>。`;
-    }
-  };
-
-  let pickA = null;
-  let pressCard = null, pressX = 0, pressY = 0, pressMoved = false;
-  const clearPick = ()=>{
-    if(!pickA) return;
-    const el = document.querySelector(`.card[data-id="${pickA}"]`);
-    if(el) el.classList.remove('picked');
-    pickA = null;
-  };
-  function pick(id){
-    if(pickA === id){ clearPick(); return; }
-    if(!pickA){
-      pickA = id;
-      const el = document.querySelector(`.card[data-id="${id}"]`);
-      if(el) el.classList.add('picked');
-      return;
-    }
-    tryLink(pickA, id);
-    clearPick();
-  }
-
-  board.addEventListener('pointerdown', e=>{
-    const card = e.target.closest('.card');
-    const pin = e.target.closest('.pin');
-    pressCard = card ? card.dataset.id : null;
-    pressX = e.clientX; pressY = e.clientY; pressMoved = false;
-    dragFrom = (pin && card) ? card.dataset.id : null;
-    if(!card && pickA) clearPick();
-    if(dragFrom){
-      tempPath = document.createElementNS('http://www.w3.org/2000/svg','path');
-      tempPath.setAttribute('class','dash');
-      svg.appendChild(tempPath);
-      const A = centerOf(dragFrom);
-      tempPath.setAttribute('d', `M${A[0]} ${A[1]} L${A[0]} ${A[1]}`);
-      document.body.style.touchAction = 'none';
+  board.querySelectorAll('.clue-card').forEach(card=>{
+    card.addEventListener('pointerdown', e=>{
+      if(e.target.classList.contains('pin')) return;
+      const rect = board.getBoundingClientRect();
+      const cr = card.getBoundingClientRect();
+      dragState = { type:'card', card, offX: e.clientX - cr.left, offY: e.clientY - cr.top };
+      card.classList.add('dragging');
+      card.setPointerCapture(e.pointerId);
       e.preventDefault();
+    });
+    card.addEventListener('pointermove', e=>{
+      if(!dragState || dragState.type!=='card' || dragState.card!==card) return;
+      const rect = board.getBoundingClientRect();
+      let nx = e.clientX - rect.left - dragState.offX;
+      let ny = e.clientY - rect.top - dragState.offY;
+      nx = Math.max(0, Math.min(rect.width - card.offsetWidth, nx));
+      ny = Math.max(0, Math.min(rect.height - card.offsetHeight, ny));
+      card.style.left = nx + 'px';
+      card.style.top = ny + 'px';
+      drawAllLinks();
+    });
+    card.addEventListener('pointerup', ()=>{
+      if(dragState && dragState.card===card){ dragState = null; card.classList.remove('dragging'); }
+    });
+    card.addEventListener('pointercancel', ()=>{ dragState = null; });
+  });
+
+  board.querySelectorAll('.pin').forEach(pin=>{
+    pin.addEventListener('pointerdown', e=>{
+      const from = pin.dataset.id;
+      const A = pinCenter(from);
+      const temp = document.createElementNS('http://www.w3.org/2000/svg','path');
+      temp.setAttribute('class','temp');
+      temp.setAttribute('d', `M${A[0]} ${A[1]} L${A[0]} ${A[1]}`);
+      svg.appendChild(temp);
+      dragState = { type:'link', from, temp };
+      pin.setPointerCapture(e.pointerId);
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  });
+
+  board.addEventListener('pointermove', e=>{
+    if(!dragState || dragState.type!=='link') return;
+    const rect = board.getBoundingClientRect();
+    const A = pinCenter(dragState.from);
+    const x = e.clientX - rect.left, y = e.clientY - rect.top;
+    dragState.temp.setAttribute('d', `M${A[0]} ${A[1]} L${x} ${y}`);
+  });
+
+  board.addEventListener('pointerup', e=>{
+    if(!dragState || dragState.type!=='link') return;
+    const { from, temp } = dragState;
+    temp.remove();
+    dragState = null;
+    const el = document.elementFromPoint(e.clientX, e.clientY);
+    const targetPin = el && el.classList && el.classList.contains('pin') ? el : null;
+    if(targetPin){
+      const to = targetPin.dataset.id;
+      if(to !== from) tryLink(from, to);
     }
   });
 
-  function unlockTouch(){ document.body.style.touchAction = ''; }
-
-  if(window.__bm) window.removeEventListener('pointermove', window.__bm);
-  if(window.__bu) window.removeEventListener('pointerup', window.__bu);
-  if(window.__bc) window.removeEventListener('pointercancel', window.__bc);
-  if(window.__br) window.removeEventListener('resize', window.__br);
-  window.__bm = onMove; window.__bu = onUp; window.__bc = onCancel; window.__br = reflow;
-  window.addEventListener('pointermove', onMove);
-  window.addEventListener('pointerup', onUp);
-  window.addEventListener('pointercancel', onCancel);
-  window.addEventListener('resize', reflow);
-
-  function onCancel(){
-    unlockTouch();
-    if(tempPath){ tempPath.remove(); tempPath = null; }
-    dragFrom = null;
-  }
-
-  function reflow(){
-    svg.setAttribute('viewBox', `0 0 ${board.clientWidth} ${board.clientHeight}`);
-    svg.querySelectorAll('path.ok').forEach(p=>{
-      const l = p.dataset.link;
-      if(!l) return;
-      const [a,b] = l.split('|');
-      if(CARDS[a] && CARDS[b]) setD(p, centerOf(a), centerOf(b));
-    });
-  }
-
-  function onMove(e){
-    if(!pressCard) return;
-    if(!pressMoved && Math.hypot(e.clientX-pressX, e.clientY-pressY) > 8) pressMoved = true;
-    if(dragFrom && tempPath && pressMoved){
-      const b = board.getBoundingClientRect();
-      const A = centerOf(dragFrom);
-      const x = e.clientX - b.left, y = e.clientY - b.top;
-      tempPath.setAttribute('d', `M${A[0]} ${A[1]} L${x} ${y}`);
-    }
-  }
-
-  function onUp(e){
-    unlockTouch();
-    if(!pressCard) return;
-    const el = document.elementFromPoint(e.clientX, e.clientY);
-    const target = el && el.closest ? el.closest('.card') : null;
-    const to = target ? target.dataset.id : null;
-
-    if(dragFrom && tempPath){
-      tempPath.remove(); tempPath = null;
-      const from = dragFrom; dragFrom = null;
-      if(to && to !== from) tryLink(from, to);
-      return;
-    }
-
-    if(pressMoved){
-      pressCard = null;
-      return;
-    }
-
-    if(!to) return;
-    pick(to);
-    pressCard = null;
+  if(!window._boardResizeBound){
+    window._boardResizeBound = true;
+    window.addEventListener('resize', ()=>{ if($('#board')) drawAllLinks(); });
   }
 }
 
-function keyOf(a,b){ return [a,b].sort().join('|'); }
+function pinCenter(cid){
+  const board = $('#board');
+  if(!board) return [0,0];
+  const pin = board.querySelector(`.clue-card[data-id="${cid}"] .pin`);
+  if(!pin) return [0,0];
+  const br = board.getBoundingClientRect();
+  const pr = pin.getBoundingClientRect();
+  return [pr.left - br.left + pr.width/2, pr.top - br.top + pr.height/2];
+}
 
-function tryLink(c1, c2){
-  if(c1 === c2) return;
-  const k = keyOf(c1,c2);
-  if(solved[k]) return;
+function drawAllLinks(){
+  const svg = $('#boardSvg');
+  if(!svg) return;
+  svg.innerHTML = '';
+  Object.keys(STATE.links).forEach(k=>{
+    const [a,b] = k.split('|');
+    if(!document.querySelector(`.clue-card[data-id="${a}"]`)) return;
+    if(!document.querySelector(`.clue-card[data-id="${b}"]`)) return;
+    const A = pinCenter(a), B = pinCenter(b);
+    const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+    p.setAttribute('class','ok');
+    p.setAttribute('d', curvePath(A,B));
+    svg.appendChild(p);
+  });
+  updateProgress();
+}
 
-  // 1. 检查连接次数是否已满
-  if(curDeg[c1] >= MAX_DEG[c1]) {
-    addNote('—', `【${CARDS[c1].n}】的线索两端都已经连满了。`, true);
-    return;
-  }
-  if(curDeg[c2] >= MAX_DEG[c2]) {
-    addNote('—', `【${CARDS[c2].n}】的线索两端都已经连满了。`, true);
-    return;
-  }
+function curvePath(A,B){
+  const mx = (A[0]+B[0])/2 + (B[0]-A[0])*0.05;
+  const my = (A[1]+B[1])/2 + Math.abs(B[0]-A[0])*0.05 + 20;
+  return `M${A[0]} ${A[1]} Q${mx} ${my} ${B[0]} ${B[1]}`;
+}
 
-  // 2. 检查因果关系（必须按 a -> b 的方向）
-  const pair = PAIRS.find(p => p.a === c1 && p.b === c2);
-  if(!pair) {
-    const reverse = PAIRS.find(p => p.a === c2 && p.b === c1);
-    if(reverse) {
-      addNote('—', `因果反了。应该先点【${CARDS[c2].n}】，再点【${CARDS[c1].n}】。`, true);
-    } else {
-      // 无关卡片，画个错误线
-      const A = centerOf(c1), B = centerOf(c2);
+function tryLink(a, b){
+  if(a === b) return;
+  const k = keyOf(a,b);
+  if(STATE.links[k]) return;
+  const pair = PAIRS.find(p => p.a === a && p.b === b);
+  if(pair){
+    STATE.links[k] = true;
+    saveState();
+    addNote(pair.k, pair.t, false);
+    drawAllLinks();
+    document.querySelector(`.clue-card[data-id="${a}"]`).classList.add('linked');
+    document.querySelector(`.clue-card[data-id="${b}"]`).classList.add('linked');
+    if(Object.keys(STATE.links).length === PAIRS.length){
+      setTimeout(()=>{
+        addNote('系统','全部线索已连上。请在下方输入安全码。', false);
+        const pi = $('#pwd-input'); if(pi) pi.focus();
+        toast('<b>线索板</b>：全部关联完成');
+      }, 600);
+    }
+  }else{
+    // 错误连线：计数
+    STATE.linkErrors = (STATE.linkErrors || 0) + 1;
+    saveState();
+    const et = $('#errtip');
+    if(et) et.textContent = `错误连线：${STATE.linkErrors}/50`;
+    // 50 次触发
+    if(STATE.linkErrors >= 50 && !STATE.linkErrorsWarned){
+      STATE.linkErrorsWarned = true;
+      saveState();
+      setTimeout(()=>triggerLinkErrorsGlitch(), 500);
+    }
+
+    const rev = PAIRS.find(p => p.a === b && p.b === a);
+    if(rev){
+      addNote('—', `因果反了。应该先【${CLUES[b].name}】再【${CLUES[a].name}】。`, true);
+    }else{
+      addNote('—', '这两张线索之间没有直接关联。', true);
+      const svg = $('#boardSvg');
+      const A = pinCenter(a), B = pinCenter(b);
       const p = document.createElementNS('http://www.w3.org/2000/svg','path');
       p.setAttribute('class','bad');
-      setD(p, A, B);
-      document.getElementById('boardSvg').appendChild(p);
-      setTimeout(()=>p.remove(), 620);
-      addNote('—', '这两张线索之间没有直接关联。', true);
+      p.setAttribute('d', curvePath(A,B));
+      svg.appendChild(p);
+      setTimeout(()=>p.remove(), 700);
     }
-    return;
   }
+}
 
-  // 3. 连线成功
-  solved[k] = true;
-  curDeg[c1]++;
-  curDeg[c2]++;
-  okCount++;
-
-  const A = centerOf(c1), B = centerOf(c2);
-  const p = document.createElementNS('http://www.w3.org/2000/svg','path');
-  p.setAttribute('class','ok');
-  p.dataset.link = c1+'|'+c2;
-  setD(p, A, B);
-  document.getElementById('boardSvg').appendChild(p);
-
-  const len = p.getTotalLength();
-  p.setAttribute('stroke-dasharray', len+' '+len);
-  p.setAttribute('stroke-dashoffset', len);
-  frameAnim(q=>{
-    const e = 1 - Math.pow(1 - q, 2);
-    p.setAttribute('stroke-dashoffset', len * (1 - e));
-  }, 40);
-
-  document.querySelector(`.card[data-id="${c1}"]`).classList.add('linked');
-  document.querySelector(`.card[data-id="${c2}"]`).classList.add('linked');
-  
-  [c1,c2].forEach(id=>{
-    const c = document.querySelector(`.card[data-id="${id}"]`);
-    c.classList.add('ok-flash');
-    setTimeout(()=>c.classList.remove('ok-flash'), 720);
-  });
-
-  addNote(pair.k, pair.t);
-  document.getElementById('pbar').style.width = (okCount/PAIRS.length*100)+'%';
-  document.getElementById('pnum').textContent = okCount+' / '+PAIRS.length;
-  if(okCount === PAIRS.length){
-    setTimeout(()=>{ document.getElementById('solve').classList.add('on'); }, 700);
-  }
+function updateProgress(){
+  const done = Object.keys(STATE.links).length;
+  const pbar = $('#pbar'), pnum = $('#pnum');
+  if(pbar) pbar.style.width = (done/PAIRS.length*100)+'%';
+  if(pnum) pnum.textContent = `${done} / ${PAIRS.length}`;
 }
 
 function addNote(k, text, wrong){
-  const list = document.getElementById('nlist');
+  const list = $('#nlist');
+  if(!list) return;
   const d = document.createElement('div');
-  d.className = 'nitem' + (wrong ? ' wrong' : '');
-  d.innerHTML = `<i>${wrong ? '×' : '✓'}</i><div>${wrong ? text : `<b style="color:#d9cbb0;font-weight:400">${k}</b>　${text}`}</div>`;
+  d.className = 'nitem' + (wrong?' wrong':'');
+  d.innerHTML = `<i>${wrong?'×':'✓'}</i><div>${wrong ? text : `<b style="color:#d9cbb0;font-weight:400">${k}</b>　${text}`}</div>`;
   list.appendChild(d);
-  if(wrong) setTimeout(()=>d.remove(), 3200);
+  if(wrong) setTimeout(()=>d.remove(), 3500);
 }
 
-function frameAnim(apply, durFrames){
-  let f = 0;
-  (function step(){
-    f++;
-    const q = Math.min(1, f / durFrames);
-    apply(q);
-    if(q < 1) setTimeout(step, 16);
-  })();
-}
-
-function revealCase(){
-  const rows = SOLVE_TL.map((r,i)=>
-    `<div class="rvl"><span class="d">${r[0]}</span><span class="t">${r[1]}</span></div>`
-  ).join('');
-  const d = document.createElement('div');
-  d.className = 'reveal';
-  d.innerHTML = `<div class="rv-in">
-    <h2>水　线</h2>
-    ${rows}
-    <div class="rv-end">
-      <p>五个人。同一间房，同一双手，同一个月的最后一天。</p>
-      <p>水费单上的户名，还是她。</p>
-      <p style="margin-top:34px">今天是这个月的最后一天。</p>
-      <p>凌晨一点十分，我的水表开始走字。</p>
-      <div class="m">— 完 —</div>
-      <a href="#/" class="rv-back" onclick="setTimeout(()=>location.reload(),50)">← 返回版面</a>
-    </div>
-  </div>`;
-  document.body.appendChild(d);
-  document.body.style.overflow = 'hidden';
-
-  const items = d.querySelectorAll('.rvl, .rv-end');
-  items.forEach((el,i)=>{
-    setTimeout(()=>frameAnim(q=>{ el.style.opacity = q; }, 54), 320 + i*430);
-  });
-}
-
-/* ================= 路由 ================= */
-function route(){
-  document.body.style.background = '';
-  document.body.style.overflow = '';
-  document.querySelectorAll('.reveal').forEach(n=>n.remove());
-
-  const q = new URLSearchParams(location.search);
-  if(q.get('p') === '13'){ render13(); return; }
-
-  let h = location.hash;
-  if(h === '#' || h === '#/') h = '';
-
-  if(h.startsWith('#/t/')){
-    const id = parseInt(h.slice(4),10);
-    if(!THREADS.some(t=>t.id===id)) render404();
-    else renderThread(id);
-  }else if(h === '#/archive'){
-    document.body.style.background = '#1b1815';
-    document.getElementById('app').innerHTML = boardHTML();
-    document.title = '回收站 · 夜航船';
-    setTimeout(()=>{
-      initBoard();
-      document.getElementById('solve').onclick = revealCase;
-    }, 40);
-  }else{
-    renderIndex();
+function showHint(){
+  const hm = $('#hintmsg');
+  const rest = PAIRS.filter(p => !STATE.links[keyOf(p.a,p.b)]);
+  if(!rest.length){ hm.innerHTML = '线都连上了。去下面输密码。'; return; }
+  if(STATE.clues.size < 9){
+    hm.innerHTML = `线索还不够（还差 ${9 - STATE.clues.size} 张）。回私信问问版主。`;
+    return;
   }
-  window.scrollTo(0,0);
+  const p = rest[0];
+  hm.innerHTML = `试着从 <b>${CLUES[p.a].name}</b> 连到 <b>${CLUES[p.b].name}</b>。`;
 }
 
-window.addEventListener('hashchange', route);
-route();
+function resetBoard(){
+  if(!confirm('重置所有连线？线索本身不会丢失。')) return;
+  STATE.links = {};
+  saveState();
+  const nl = $('#nlist'); if(nl) nl.innerHTML = '';
+  document.querySelectorAll('.clue-card').forEach(c=>c.classList.remove('linked'));
+  drawAllLinks();
+}
 
-console.log('%c夜航船 · 江北区专版', 'font-size:16px;color:#a83c30');
-console.log('%c你找到我了。他也在找你。', 'font-size:13px;color:#5f5648');
+/* ============================================================
+   密码 & 隐藏页
+============================================================ */
+function checkPwd(){
+  const inp = $('#pwd-input');
+  const v = (inp.value||'').trim().toUpperCase();
+  if(v === 'HX-0417' || v === 'HX0417'){
+    STATE.hiddenUnlocked = true;
+    saveState();
+    location.hash = '#/hidden';
+  }else{
+    inp.classList.remove('shake');
+    void inp.offsetWidth;
+    inp.classList.add('shake');
+    pushPM('suspect', '你还在试密码？没用的。', true);
+  }
+}
+
+function renderHidden(){
+  if(!STATE.hiddenUnlocked){ location.hash = '#/archive'; return; }
+  $('#app').innerHTML = `
+    <div class="hidden-page">
+      <div class="hidden-inner">
+        <h2>HX-0417</h2>
+        <div class="line">> 内部档案 · 仅限授权人员</div>
+        <div class="line">> 案件编号：JB-2013-0417</div>
+        <div class="line">> </div>
+        <div class="line">> 死者：<span class="key">苏晚</span>，女，29 岁</div>
+        <div class="line">> 身份：江州市自来水公司 抄表员</div>
+        <div class="line">> 失踪时间：2011-09-30</div>
+        <div class="line">> 发现时间：2013-06-11</div>
+        <div class="line">> 发现地点：建设路 37 号 顶楼设备层 水箱</div>
+        <div class="line">> </div>
+        <div class="line">> 嫌疑人：<span class="key">陈默</span>，男，41 岁</div>
+        <div class="line">> 身份：自来水公司 设备维修工</div>
+        <div class="line">> 工号：HX-0417</div>
+        <div class="line">> 动机：苏晚发现其偷盗自来水（私接管道供给黑洗车行），威胁举报</div>
+        <div class="line">> 手段：在设备层掐死苏晚，将尸体藏入水箱</div>
+        <div class="line">> 后续：陈默伪装成抄表员，每月月末返回现场处理痕迹</div>
+        <div class="line">> </div>
+        <div class="line">> 处理结果：</div>
+        <div class="line">> 2013-06-20 陈默在江北区落网。</div>
+        <div class="line">> 2013-11-05 案件结束。未公开。</div>
+        <div class="line">> </div>
+        <div class="line" style="color:#d8503f">> 论坛数据来源：苏晴（ID：雨停之前），苏晚之妹。</div>
+        <div class="line" style="color:#d8503f">> 她在 2019-11-30 最后登录后失联。</div>
+        <div class="line" style="color:#d8503f">> 本档案由匿名用户上传。</div>
+        <div class="line" style="color:#5c5344;margin-top:20px">> — 档案结束 —</div>
+        <a class="back" onclick="location.hash='#/trueend'">> [ 查看结局 ]</a>
+        <a class="back" onclick="location.hash='#/'" style="display:block;margin-top:10px">← 返回论坛</a>
+      </div>
+    </div>`;
+  document.title = 'HX-0417 · 内部档案';
+  updateFloatBtns();
+}
+
+/* ============================================================
+   结局
+============================================================ */
+function renderEnding(type){
+  if(type === 'bad'){
+    $('#app').innerHTML = `
+      <div class="ending">
+        <div class="ending-inner">
+          <h1>你被盯上了</h1>
+          <p>用户 ID：${esc(STATE.user||'')}</p>
+          <p>违规提交：${STATE.blockedCount} 次</p>
+          <p>论坛已锁定你的 IP。</p>
+          <div class="big">今晚，别关灯。</div>
+          <p style="color:#5c5344;font-size:11px">系统提示：你没有通过这场筛选。</p>
+          <button onclick="restartAll()">重新开始</button>
+        </div>
+      </div>`;
+    document.title = '你被盯上了';
+  }else{
+    $('#app').innerHTML = `
+      <div class="ending good">
+        <div class="ending-inner">
+          <h1>真相</h1>
+          <p>2011-09-30，月末。</p>
+          <p>苏晚在建设路 37 号顶楼设备层，撞见陈默偷接自来水。</p>
+          <p>她拍下了那张照片，准备上报。</p>
+          <div class="big">然后，她再也没能从那个水箱里出来。</div>
+          <p>五年间，她的水声、她的抄表存根、她的工作服、她的桶，</p>
+          <p>散落在五个互不相干的帖子里。</p>
+          <p>而你，把它们连了起来。</p>
+          <div class="big" style="color:#e5432f;margin-top:40px">档案编号 JB-2013-0417 已归档。</div>
+          <p style="color:#5c5344;font-size:11px;margin-top:30px">— 怪谈事件簿 · 完结 —</p>
+          <button onclick="location.hash='#/'">返回论坛</button>
+        </div>
+      </div>`;
+    document.title = '真相 · 怪谈事件簿';
+  }
+  updateFloatBtns();
+}
+function restartAll(){
+  clearSave();
+  STATE.user = null;
+  STATE.readThreads = new Set();
+  STATE.clues = new Set();
+  STATE.links = {};
+  STATE.pmRead = {};
+  STATE.blockedCount = 0;
+  STATE.glitchTriggered = false;
+  STATE.hiddenUnlocked = false;
+  STATE.suspectUnlocked = false;
+  STATE.badEndTriggered = false;
+  STATE.guideClosed = false;
+  STATE.seenExif = new Set();
+  STATE.linkErrors = 0;
+  STATE.linkErrorsWarned = false;
+  location.hash = '#/login';
+}
+
+/* ============================================================
+   关于
+============================================================ */
+function renderAbout(){
+  $('#app').innerHTML = shell(`
+    <h2 class="sec-title">关于本站 <small>ABOUT</small></h2>
+    <div class="rules" style="line-height:2.2">
+      <p>怪谈事件簿，成立于 2008 年，前身为「夜航船」。2012 年改版后以江北区为中心，收集各地灵异事件。</p>
+      <p>本站已停止更新。仅作存档。</p>
+      <p style="color:var(--ink3);font-size:12px">站务邮箱：<span class="hid">bbs@guaidan.net</span></p>
+      <p style="color:var(--ink3);font-size:12px">版主：雨停之前</p>
+      <p style="color:var(--ink3);font-size:12px">当前 ID：${esc(STATE.user||'')}</p>
+      <p style="color:var(--ink3);font-size:12px">游戏进度：线索 ${STATE.clues.size}/9 · 连线 ${Object.keys(STATE.links).length}/${PAIRS.length} · 错误连线 ${STATE.linkErrors}/50</p>
+    </div>
+    <div class="backbar">
+      <a class="backlink" onclick="location.hash='#/'">← 返回</a>
+      <a class="backlink" onclick="if(confirm('清空存档并退出？')){clearSave();location.reload()}">清空存档</a>
+    </div>
+  `, '关于');
+  updateFloatBtns();
+}
+
+/* ============================================================
+   悬浮按钮
+============================================================ */
+function updateFloatBtns(){
+  const t = $('#backtop'), b = $('#backbottom');
+  if(!t || !b) return;
+  const h = location.hash;
+  if(h === '#/hidden' || h === '#/doomed' || h === '#/trueend' || h === '#/login'){
+    t.classList.remove('show');
+    b.classList.remove('show');
+    return;
+  }
+  const st = window.scrollY;
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  t.classList.toggle('show', st > 300);
+  b.classList.toggle('show', max > 600 && (max - st) > 300);
+}
+window.addEventListener('scroll', updateFloatBtns);
+window.addEventListener('resize', updateFloatBtns);
+$('#backtop').onclick = ()=>window.scrollTo({top:0,behavior:'smooth'});
+$('#backbottom').onclick = ()=>window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'});
+
+/* ============================================================
+   控制台
+============================================================ */
+window.help = ()=>{
+  console.log('%c怪谈事件簿 · 控制台指令', 'color:#e5432f;font-size:14px');
+  console.log('help()         显示指令');
+  console.log('who()          显示当前用户与进度');
+  console.log('lookup(名字)   查询人物档案');
+  console.log('clue()         显示已收集线索');
+  console.log('progress()     显示连线进度');
+  console.log('reset()        清空存档');
+  console.log('');
+  console.log('试试：lookup("苏晚")');
+};
+window.who = ()=>{
+  console.log(`%c当前用户：${STATE.user || '(未登录)'}`, 'color:#e5432f');
+  console.log(`已读帖子：${STATE.readThreads.size}/${THREADS.length}`);
+  console.log(`线索：${STATE.clues.size}/9`);
+  console.log(`连线：${Object.keys(STATE.links).length}/${PAIRS.length}`);
+  console.log(`违规提交：${STATE.blockedCount}/9`);
+  console.log(`错误连线：${STATE.linkErrors}/50`);
+  console.log(`可见联系人：${CONTACTS.filter(isContactVisible).map(c=>c.name).join('、')}`);
+};
+window.lookup = (n)=>{
+  const db = {
+    '苏晚':'苏晚，女，29岁，江州市自来水公司抄表员。2011-09-30 失踪。2013-06-11 于建设路37号顶楼水箱被发现。',
+    '陈默':'陈默，男，41岁，自来水公司设备维修工。工号 HX-0417。2013-06-20 落网。',
+    '苏晴':'苏晴，苏晚之妹。论坛 ID：雨停之前。2019-11-30 失联。',
+    '李':'?? 值班表上被涂掉的名字。也许不是李。',
+    'HX-0417':'设备维修工陈默的工号。2011.03 — 2013.06 每月月末值班。',
+  };
+  console.log(`%c[档案] ${n}`, 'color:#e5432f');
+  console.log(db[n] || `查无此人：${n}`);
+};
+window.clue = ()=>{
+  const list = [...STATE.clues].map(c => CLUES[c]?.name).filter(Boolean);
+  console.log('%c当前线索', 'color:#e5432f');
+  console.log(list.length ? list.join('\n') : '（空）');
+};
+window.progress = ()=>{
+  console.log(`线索 ${STATE.clues.size}/9，连线 ${Object.keys(STATE.links).length}/${PAIRS.length}，错误 ${STATE.linkErrors}/50`);
+};
+window.reset = ()=>{
+  if(confirm('清空存档？')){
+    clearSave();
+    location.reload();
+  }
+};
+
+/* ============================================================
+   启动
+============================================================ */
+loadState();
+if(!STATE.user && (location.hash === '' || location.hash === '#')) location.hash = '#/login';
+route();
+console.log('%c怪谈事件簿', 'font-size:16px;color:#b3352a');
+console.log('%c你找到我了。但我不确定，是你先找到我，还是我先找到你。', 'font-size:12px;color:#5c5049');
+console.log('%c输入 help() 查看指令。', 'font-size:11px;color:#4a3a30');
 </script>
 </body>
 </html>
